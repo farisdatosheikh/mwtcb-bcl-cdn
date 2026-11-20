@@ -1,0 +1,1306 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+#mwx,#mwx-faq,#order_form{--body:'Plus Jakarta Sans',Arial,sans-serif;--head:Fraunces,Georgia,serif;--headw:800;--headls:-.01em;--h1:34px;--emstyle:italic;--radius:99px;--bg:#fffaf3;--k:#3b2417;--herobg:#fff3e4;--herok:#3b2417;--brand:#a8491c;--accent:#c2531c;--dealbg:#f6dcc0;--dealk:#3b2417;--g:#14523f;--t:#c2531c;--r:#c2531c;--rd:#8a3a12;--c:#fff3e4;--soft:#fff3e4;--line:#c2531c;--line2:#ecd9c4;--cardtop:#fff3e4;--price:#c2531c;--bar:#3b2417;--formfont:'Plus Jakarta Sans',Arial,sans-serif}
+#mwx,#mwx *,#mwx-faq,#mwx-faq *{box-sizing:border-box}
+#mwx{font-family:var(--body);font-size:17px;line-height:1.55;color:var(--k);background:var(--bg);overflow:hidden;text-align:left}
+#mwx img{max-width:100%;height:auto;display:block}
+#mwx h1,#mwx h2,#mwx p,#mwx ol,#mwx ul,#mwx figure{margin:0;padding:0}
+#mwx h1,#mwx h2{font-family:var(--head);font-weight:var(--headw);letter-spacing:var(--headls);color:inherit}
+#mwx h2{font-size:27px;line-height:1.18;margin-bottom:16px}
+#mwx a{text-decoration:none}
+.mwx-hero{background:var(--herobg);color:var(--herok);padding:16px 18px 22px}
+#mwx .mwx-brandline{font-size:12.5px;font-weight:700;color:var(--brand);margin-bottom:10px}
+#mwx h1{font-size:var(--h1);line-height:1.08;color:var(--herok)}
+#mwx h1 em{font-style:var(--emstyle);color:var(--accent)}
+#mwx .mwx-sub{font-size:17px;margin-top:10px;font-weight:500}
+.mwx-stage{position:relative;margin:14px -18px 16px;height:292px;overflow:hidden;background:radial-gradient(circle at 62% 42%,#2a8f6d 0,#14523f 46%,#0a2c23 100%)}
+#mwx .mwx-stage img{position:absolute;left:0;top:0;width:232px;height:100%;max-width:none;object-fit:cover;object-position:top}
+.mwx-sticker{position:absolute;right:14px;top:14px;width:124px;height:124px;border-radius:50%;background:var(--r);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.1;transform:rotate(5deg);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.mwx-sticker small{font-size:12.5px;font-weight:700}.mwx-sticker b{font-size:33px;font-weight:800;margin:2px 0}
+#mwx .mwx-tags{position:absolute;right:14px;bottom:14px;list-style:none;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.mwx-tags li{background:var(--c);color:var(--g);font-size:13px;font-weight:800;padding:4px 10px;border-radius:99px}
+#mwx .mwx-tags-row{position:static;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;margin:12px 0 14px}
+#mwx .mwx-hero-scene{width:calc(100% + 36px);max-width:none;margin:14px -18px}
+.mwx-pricecard{display:flex;align-items:center;gap:14px;margin:14px 0;padding:12px 14px;border:2px dashed var(--accent);border-radius:14px}
+.mwx-pricecard span{display:flex;flex-direction:column;line-height:1.25}
+.mwx-pricecard small{font-size:13.5px;font-weight:700}.mwx-pricecard b{font-family:var(--head);font-size:34px;line-height:1;color:var(--accent)}
+#mwx .mwx-btn{display:block;background:var(--r);color:#fff;text-align:center;font-weight:800;font-size:19px;padding:16px 12px;border-radius:var(--radius);box-shadow:0 5px 0 var(--rd)}
+#mwx .mwx-btn-soft{margin-top:16px;background:var(--g);box-shadow:none;font-size:17px;padding:13px}
+#mwx .mwx-note{font-size:13.5px;opacity:.8;margin-top:12px}
+.mwx-deal{background:var(--dealbg);color:var(--dealk);padding:24px 18px;text-align:center}
+#mwx .mwx-deal-big{font-family:var(--head);font-size:27px;font-weight:var(--headw);line-height:1.15;letter-spacing:var(--headls)}
+.mwx-deal-row{display:flex;align-items:center;justify-content:center;gap:14px;margin:16px 0 12px}
+.mwx-deal-row div{background:#fff;color:#10231c;border-radius:12px;padding:8px 18px;min-width:112px}
+.mwx-deal-row div.on{background:var(--g);color:#fff}
+.mwx-deal-row span{display:block;font-size:13px;font-weight:700}.mwx-deal-row b{font-size:25px;font-weight:800}
+.mwx-deal-row i{font-style:normal;font-size:24px;font-weight:800}
+#mwx .mwx-deal-foot{font-size:14px;font-weight:700}
+.mwx-sec{padding:34px 18px}
+#mwx .mwx-scene{width:100%;border-radius:12px;margin:0 0 14px}
+#mwx .mwx-line{margin-bottom:11px}
+#mwx .mwx-punch{font-family:var(--head);font-weight:var(--headw);font-size:21px;line-height:1.25;color:var(--accent);margin:16px 0 0}
+#mwx .mwx-list{list-style:none}
+.mwx-list li{border-top:2px solid var(--line);padding:13px 0}
+.mwx-list b{display:block;font-size:19px;font-weight:800}
+#mwx .mwx-lead{margin-top:14px;font-weight:500}
+.mwx-dulu{display:grid;gap:10px}
+.mwx-dulu>div{display:grid;grid-template-columns:1fr 1fr;border-radius:12px;overflow:hidden;font-size:14.5px;line-height:1.35}
+.mwx-dulu span{padding:11px 12px}
+.mwx-dulu .a{background:#ece6da;color:#5a544a;text-decoration:line-through;text-decoration-thickness:1px}
+.mwx-dulu .b{background:var(--g);color:#fff;font-weight:700}
+.mwx-dark{background:var(--g);color:#fff}
+.mwx-rasa{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mwx-rasa div{border-radius:12px;padding:14px;color:#10231c}
+.mwx-rasa .sejuk{background:#c9ecf0}.mwx-rasa .suam{background:#f8d9a6}
+.mwx-rasa span{font-size:12.5px;font-weight:700}.mwx-rasa b{display:block;font-size:20px;line-height:1.15;font-weight:800;margin:3px 0 7px}
+.mwx-rasa p{font-size:14px;line-height:1.4}
+#mwx .mwx-bahan{margin-top:14px;font-size:15px}
+#mwx .mwx-steps{list-style:none;counter-reset:s}
+.mwx-steps li{counter-increment:s;position:relative;padding:9px 0 9px 50px;min-height:50px}
+.mwx-steps li:before{content:counter(s);position:absolute;left:0;top:6px;width:38px;height:38px;border-radius:50%;background:var(--t);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.mwx-cara{margin:12px auto 14px;max-width:420px}
+#mwx .mwx-cara img{width:100%;height:auto;display:block;border-radius:14px}
+#mwx .mwx-warn{background:rgba(211,23,29,.07);border-left:4px solid var(--r);padding:11px 13px;font-size:14px;margin-top:12px}
+.mwx-cream{background:var(--soft)}
+.mwx-duo{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}
+.mwx-duo>img{border-radius:12px}
+#mwx .mwx-duo figure{background:#fff;color:#10231c;border-radius:12px;display:grid;grid-template-columns:42% 1fr;align-items:center;gap:8px;padding:8px 14px 0 0;overflow:hidden}
+.mwx-duo figcaption{font-weight:800;font-size:17px;line-height:1.25}
+.mwx-kira-row{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:12px;background:var(--soft);margin-bottom:8px;font-weight:700}
+.mwx-kira-row.on{background:var(--g);color:#fff}
+.mwx-kira-row b{font-size:24px;font-weight:800}
+#mwx .mwx-kira-note{font-size:17px;margin-top:10px}
+#mwx .mwx-card{display:block;color:inherit;border:2px solid var(--line2);border-radius:14px;padding:14px;margin-bottom:10px}
+#mwx .mwx-card.top{border:3px solid var(--r);background:var(--cardtop);padding-top:0;overflow:hidden}
+.mwx-flag{display:block;background:var(--r);color:#fff;font-size:13px;font-weight:800;margin:0 -14px 12px;padding:6px 14px}
+.mwx-card-row{display:flex;justify-content:space-between;align-items:baseline}
+.mwx-card-row b{font-size:21px;font-weight:800}.mwx-card-row strong{font-size:30px;font-weight:800;color:var(--price)}
+.mwx-card-sub{display:block;font-size:14.5px;opacity:.82}
+.mwx-card-cta{display:block;margin-top:9px;font-weight:800;color:var(--r)}
+.mwx-pos{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px}
+.mwx-pos th,.mwx-pos td{padding:9px 6px;border-bottom:1px solid var(--line2);text-align:right}
+.mwx-pos th:first-child{text-align:left}
+#mwx-faq{font-family:var(--body);font-size:17px;line-height:1.55;color:var(--k);text-align:left}
+#mwx-faq h2{font-family:var(--head);font-weight:var(--headw);letter-spacing:var(--headls);font-size:27px;line-height:1.18;margin:0 0 16px}
+#mwx-faq details{border-bottom:1px solid var(--line2);padding:12px 0}
+#mwx-faq summary{font-weight:800;cursor:pointer}
+#mwx-faq details p{margin:7px 0 0;font-size:15.5px}
+#mwx .mwx-kira-line{margin-bottom:14px}
+#mwx .mwx-end-seller{font-size:13.5px;opacity:.85;margin-top:8px}
+.mwx-tutup{text-align:center}
+.mwx-pilih{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px;text-align:left}
+.mwx-pilih div{border:2px solid var(--line2);border-radius:12px;padding:12px;font-size:14.5px;line-height:1.35}
+.mwx-pilih .on{border-color:var(--r);background:var(--cardtop)}
+.mwx-pilih span{display:block;font-weight:800;font-size:13px;margin-bottom:5px}
+.mwx-end{background:var(--g);color:#fff;padding:26px 18px;text-align:center}
+#mwx .mwx-end h2{margin-bottom:6px}.mwx-end p{font-size:15px}
+.mwx-video{position:relative;margin:0 auto;max-width:300px;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000}
+#mwx .mwx-video img,#mwx .mwx-video video,#mwx .mwx-video iframe{width:100%;height:100%;object-fit:cover;border:0;display:block}
+.mwx-video button{position:absolute;inset:0;width:100%;background:transparent;border:0;cursor:pointer;color:#fff;font:800 15px/1 var(--body)}
+.mwx-video button:before{content:"";display:block;margin:0 auto 10px;width:0;height:0;border-style:solid;border-width:22px 0 22px 36px;border-color:transparent transparent transparent #fff;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6))}
+#mwx .mwx-vcap{text-align:center;font-size:14px;margin-top:8px}
+#mwx .mwx-hero .mwx-video{margin-top:14px;margin-bottom:12px}
+.mwx-ulasan{display:grid;gap:10px}
+.mwx-ulasan blockquote{margin:0;background:var(--soft);border-radius:12px;padding:13px 14px;font-size:15.5px}
+.mwx-ulasan cite{display:block;font-style:normal;font-weight:800;font-size:13.5px;margin-top:6px}
+.mwx-founder{background:var(--soft);border-radius:14px;padding:16px;font-family:var(--head);font-size:19px;line-height:1.3}
+.mwx-founder small{display:block;font-family:var(--body);font-size:13.5px;font-weight:700;margin-top:8px}
+#mwx .mwx-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:center;justify-content:space-between;background:var(--bar);color:#fff;padding:10px 14px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 14px rgba(0,0,0,.25);transition:transform .2s}
+#mwx .mwx-bar.off{transform:translateY(110%)}
+.mwx-bar b{font-size:20px;font-weight:800}
+.mwx-bar em{font-style:normal;background:var(--r);padding:9px 22px;border-radius:9px;font-weight:800}
+@media (min-width:700px){
+ #mwx h1{font-size:calc(var(--h1) + 12px)}
+ .mwx-stage{height:380px;margin-left:0;margin-right:0;border-radius:16px}
+ #mwx .mwx-stage img{width:310px}
+ .mwx-hero,.mwx-sec,.mwx-deal,.mwx-end{padding-left:40px;padding-right:40px}
+ #mwx .mwx-hero-scene{width:100%;margin:14px 0;border-radius:16px}
+ .mwx-duo{grid-template-columns:1fr 1fr}
+ #mwx .mwx-duo figure{grid-template-columns:1fr;padding:12px;text-align:center}
+ #mwx .mwx-bar{display:none}
+}
+@media (prefers-reduced-motion:reduce){#mwx .mwx-bar{transition:none}}
+/* Rangka OnPay pada telefon: kandungan penuh lebar skrin */
+@media (max-width:699px){
+ html,body{overflow-x:hidden}
+ #mwx{width:100vw;margin-left:calc(50% - 50vw);margin-top:-24px}
+ #mwx-faq{width:100vw;margin-left:calc(50% - 50vw);margin-top:18px}
+ .row>[class*="col-"]:has(#mwx){margin-top:0!important}
+ .card:has(#mwx){border:0;border-radius:0;box-shadow:none!important;margin-top:0!important}
+ .my-3:has(>#mwx){margin-top:0!important}
+}
+/* Borang OnPay: sama untuk semua template */
+#order_form{font-family:var(--formfont,Arial,sans-serif)}
+#order_form>.alert-info{display:none}
+#products-table tbody td:first-child button{display:none}
+#order_form .section-header{font-weight:800;font-size:19px;color:#0d3b2e;border:0!important;padding:6px 0;margin-top:18px}
+#products-table .input-group-append{display:none}
+#products-table select.custom-select{min-width:66px;font-size:16px;font-weight:700}
+#products-table select.custom-select,#products-table select.custom-select.is-valid{background-image:none!important;padding-right:8px!important}
+#products-table thead th{font-size:13px;color:#4c5f56;border-top:0}
+#products-table tbody td{font-size:15px;line-height:1.3}
+#products-table tbody td:first-child>.d-flex{flex-direction:row!important;gap:10px}
+#products-table tbody td:first-child img{width:64px!important;max-width:64px;height:auto}
+#products-table [class*="badge"]{white-space:normal;border-radius:8px;font-size:12.5px;text-align:left}
+#order_form input,#order_form select,#order_form textarea{font-size:16px}
+#order_form input[name="client_address_line_3"],#order_form input[name="client_address_line_4"]{display:none}
+#order_form button[type="submit"],#order_form .btn-primary{background:#d3171d!important;border-color:#d3171d!important;font-weight:800;font-size:19px;padding:13px 26px;border-radius:12px;width:100%;max-width:420px}
+.mwx-bukti{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 2px 8px;margin-top:12px}
+#mwx .mwx-bukti img{flex:0 0 82%;max-width:380px;height:auto;scroll-snap-align:center;border-radius:12px;display:block}
+#mwx .mwx-bukti-nota{font-size:13px;opacity:.75;text-align:center;margin-top:4px}
+
+/* Header jenama: lencana Tok + nama + butang pesan (tidak melekat; bar bawah kekal butang utama) */
+#mwx .mwx-head{background:#FBF5EA;border-bottom:1px solid #E3D3B4;box-shadow:inset 0 -3px 0 #F3E9D6}
+#mwx .mwx-strip{margin:0;background:#153D43;color:#F4E9D7;font-size:12.5px;font-weight:700;letter-spacing:.3px;text-align:center;padding:6px 12px}
+#mwx .mwx-headbar{display:flex;align-items:center;gap:10px;padding:9px 14px}
+#mwx .mwx-headbar img{width:44px;height:44px;border-radius:50%;flex:0 0 44px;display:block}
+#mwx .mwx-brand{margin:0;flex:1;min-width:0;line-height:1.1}
+#mwx .mwx-brand b{display:block;font-family:Constantia,Georgia,'Times New Roman',serif;font-size:20px;font-weight:700;color:#153D43;white-space:normal}
+#mwx .mwx-brand b span{display:inline-block;margin-right:.25em}
+#mwx .mwx-brand small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.6px;color:#B8892B;text-transform:uppercase;margin-top:3px}
+#mwx .mwx-headbtn{flex:0 0 auto;background:var(--r);color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:9px 14px;border-radius:9px;white-space:nowrap}
+@media (max-width:520px){#mwx .mwx-brand b{font-size:17px;white-space:normal;line-height:1.12}#mwx .mwx-brand b span{display:block}#mwx .mwx-brand small{font-size:10.5px}#mwx .mwx-headbtn span{display:none}#mwx .mwx-headbtn{padding:10px 16px}}
+/* /Header jenama */
+
+/* Penyesuaian paparan kad BCL.my & komponen Masterpiece agar kemas di skrin telefon */
+#mwx, #mwx-faq {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+#mwx-faq { margin-top: 16px !important; }
+#mwx .mwx-bar { display: none !important; }
+.mwx-vwrap { margin: 18px 0 6px; }
+.mwx-vlabel {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #153D43;
+  margin: 0 0 8px !important;
+}
+#mwx .mwx-video button {
+  background: radial-gradient(circle, rgba(10,44,35,.48) 0%, rgba(10,44,35,0) 68%);
+}
+.mwx-infogrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+@media (min-width:600px) {
+  .mwx-infogrid { grid-template-columns: 1fr 1fr; }
+}
+#mwx .mwx-infogrid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid rgba(242,194,62,.55);
+  display: block;
+}
+.mwx-card-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#mwx .mwx-card-img {
+  width: 82px !important;
+  height: 82px !important;
+  flex: 0 0 82px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,.1);
+}
+.mwx-card-txt {
+  flex: 1;
+  min-width: 0;
+  display: block;
+}
+/* Link-in-Bio Shortcut Bar & Masterpiece 6-Benefit Grid */
+.mwx-biobar {
+  background: #f5efe2;
+  border-bottom: 2px solid #e2d3b5;
+  padding: 12px 14px;
+}
+.mwx-biobar-top {
+  margin: 0 0 8px !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  color: #153D43;
+  text-align: center;
+}
+.mwx-biobar-btns { display: grid; gap: 8px; }
+.mwx-biobar-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.mwx-bio-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.mwx-bio-btn.primary { background: #d3171d; color: #fff; box-shadow: 0 3px 0 #9f1015; }
+.mwx-bio-btn.soft { background: #0d3b2e; color: #fff; }
+.mwx-bio-btn.wa { background: #fff; color: #0d3b2e; border: 2px solid #0d3b2e; }
+.mwx-bio-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+.mwx-bio-chips a {
+  background: #fff;
+  color: #153D43;
+  border: 1px solid #cbb994;
+  border-radius: 99px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.mwx-usegrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width:600px) {
+  .mwx-usegrid { grid-template-columns: 1fr 1fr; }
+}
+.mwx-usecard {
+  background: #fff;
+  border: 1.5px solid #dfd4bd;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(13,59,46,.06);
+}
+#mwx .mwx-usecard img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.mwx-usebody { padding: 13px 14px 15px; }
+.mwx-usenum {
+  display: inline-block;
+  background: #0d3b2e;
+  color: #f2c23e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  margin-bottom: 6px;
+}
+.mwx-usebody h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #0d3b2e;
+}
+.mwx-usebody p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #293c34;
+}
+@media (max-width:440px) {
+  #mwx .mwx-card-img { width: 72px !important; height: 72px !important; flex: 0 0 72px; }
+  #mwx .mwx-card-row b { font-size: 19px; }
+  #mwx .mwx-card-row strong { font-size: 26px; }
+  .mwx-biobar-sub { grid-template-columns: 1fr; }
+}
+@media (max-width:699px) {
+  #mwx, #mwx-faq, #mwx-footer { border-radius: 0 !important; }
+}
+/* Langkah 0 & Sales Page Bercerita */
+.mwx-video--compact {
+  max-width: 260px;
+  margin: 14px auto 8px !important;
+}
+.mwx-video--compact .mwx-video {
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(13,59,46,.12);
+}
+.mwx-hero .mwx-vwrap {
+  margin: 12px 0 14px;
+}
+.mwx-hero .mwx-vcap {
+  color: inherit;
+  opacity: .92;
+  font-size: 13.5px;
+  margin-top: 6px !important;
+}
+.mwx-jalur-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (min-width:600px) {
+  .mwx-jalur-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.mwx-jalur-card {
+  background: #fff;
+  color: #10231c;
+  border: 1.5px solid #dfd4bd;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(13,59,46,.06);
+}
+#mwx .mwx-jalur-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.mwx-jalur-body { padding: 12px 13px 14px; }
+.mwx-jalur-tag {
+  display: inline-block;
+  background: #0d3b2e;
+  color: #f2c23e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.mwx-jalur-body p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #293c34;
+}
+.mwx-usp-sapu {
+  margin: 0 auto 14px;
+  max-width: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(242,194,62,.45);
+}
+#mwx .mwx-usp-sapu img { width: 100%; height: auto; display: block; }
+.mwx-akhir-fig {
+  margin: 0 auto 14px;
+  max-width: 460px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+#mwx .mwx-akhir-fig img { width: 100%; height: auto; display: block; }
+
+</style>
+<div id="mwx" class="tpl-b" lang="ms-MY">
+<header class="mwx-head">
+  <p class="mwx-strip">WARISAN WK ENTERPRISE (SSM: 202603219678 / PG0592147-M) &middot; Pos SM RM7 / SS RM12</p>
+  <div class="mwx-headbar">
+    <img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-logo-tok.png" alt="Logo Tok Cap Burung" width="44" height="44">
+    <p class="mwx-brand"><b><span>Minyak Warisan </span>Tok Cap Burung</b><small>Sejak 1958 &middot; SSM: 202603219678 (PG0592147-M)</small></p>
+    <a class="mwx-headbtn" href="#order_form" data-pack="3">Pesan<span> Sekarang</span></a>
+  </div>
+</header>
+
+<section class="mwx-hero" data-mwx-sec="01_hero">
+  <h1>Betis tarik jam 3 pagi. <em>Nak menjerit, tapi wife baru lena.</em></h1>
+  <div class="mwx-vwrap mwx-hero-vwrap">
+    <div class="mwx-video" data-src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/vid-betis-cerita-20261120.mp4" data-video-slot="1_angle" data-video-title="Video Kisah Betis Tarik Jam 3 Pagi 62s">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/poster-vid-betis-cerita-20261120.jpg" alt="Video Kisah Betis Tarik Jam 3 Pagi 62s" width="720" height="1280" fetchpriority="high">
+      <button type="button">Tonton video</button>
+    </div>
+    <p class="mwx-vcap">Tonton 62 saat: betis tarik tengah malam, wife baru lena tidurkan baby</p>
+  </div>
+  <p class="mwx-sub">Titik sikit, urut dari tumit naik ke betis. Sejuk dulu, lepas tu suam. Cadar pun tak kotor.</p>
+  <ul class="mwx-tags mwx-tags-row"><li>Sejuk lepas tu suam</li><li>Tak melekit</li><li>Cadar tak kotor</li></ul>
+  <div class="mwx-pricecard"><span><small>3 botol</small><b>RM33</b></span><span><small>RM11 sebotol</small><small>Bayaran Online FPX / DuitNow</small></span></div>
+  <a class="mwx-btn" href="#order_form" data-pack="3">Saya Nak 3 Botol · RM33</a>
+  <p class="mwx-note">Pos Semenanjung RM7 &middot; Sabah &amp; Sarawak RM12 (FPX / DuitNow). Untuk sapuan luaran sahaja.</p>
+</section>
+
+<section class="mwx-sec mwx-story" data-mwx-sec="04_cerita_situasi">
+  <h2>Lepas video tu, korang pernah rasa macam ni?</h2>
+  <div class="mwx-jalur-grid">
+    <article class="mwx-jalur-card">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-betis-jalur-1.jpg" alt="Lelaki duduk di tepi katil memicit betis sementara isteri tidur" width="800" height="600" loading="lazy">
+      <div class="mwx-jalur-body">
+        <span class="mwx-jalur-tag">1 · Sebelum</span>
+        <p>Jam 3 pagi betis tiba-tiba keras. Gigit bibir, tahan senyap. Tak sampai hati kejut wife yang baru lena tidurkan baby.</p>
+      </div>
+    </article>
+    <article class="mwx-jalur-card">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-betis-jalur-2.jpg" alt="Lelaki berjalan terhincut di dapur, isteri memandang risau" width="800" height="600" loading="lazy">
+      <div class="mwx-jalur-body">
+        <span class="mwx-jalur-tag">2 · Bungkusan Sampai</span>
+        <p>Pagi esok jalan terhincut ke dapur. Wife perasan, tapi dia diam je.</p>
+      </div>
+    </article>
+    <article class="mwx-jalur-card">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-betis-jalur-3.jpg" alt="Lelaki tersenyum pegang botol kecil di tepi katil" width="800" height="600" loading="lazy">
+      <div class="mwx-jalur-body">
+        <span class="mwx-jalur-tag">3 · Mula Sapu</span>
+        <p>Malam tu ada sebotol minyak kecik kat tepi katil, dengan nota dari wife. Titik sikit, urut dari tumit naik ke betis.</p>
+      </div>
+    </article>
+  </div>
+  <p class="mwx-punch">Tidur lena tu bukan untuk kau sorang. Satu rumah ikut lena.</p>
+</section>
+
+<section class="mwx-sec mwx-dark" data-mwx-sec="06_dua_rasa">
+  <h2>Kenapa minyak ni kena dengan betis yang selalu tarik?</h2>
+  <figure class="mwx-usp-sapu">
+    <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-betis-sapu.jpg" alt="Tangan lelaki menyapu minyak hijau jernih pada betis" width="800" height="800" loading="lazy">
+  </figure>
+  <div class="mwx-rasa">
+    <div class="sejuk"><span>Mula-mula</span><b>Sejuk berangin</b><p>Mula-mula sapu, rasa sejuk berangin pudina. Betis yang keras tu terus rasa ringan sikit.</p></div>
+    <div class="suam"><span>Lepas tu</span><b>Suam selesa</b><p>Lepas tu suam masuk pelan-pelan. Urut dari tumit naik ke betis, sambung tidur.</p></div>
+  </div>
+  <p class="mwx-bahan"><b>Bahan utama:</b> Minyak Kayu Putih, Peppermint (Pudina), Menthol.</p>
+  <p class="mwx-bahan" style="margin-top:8px"><b>Tekstur &amp; Pakaian:</b> Cepat serap, tak melekit. Cadar, selimut dengan seluar tidur pun tak kotor.</p>
+</section>
+
+<section class="mwx-sec mwx-cream" data-mwx-sec="05_dulu_vs_sekarang">
+  <h2>Dulu, dan lepas tukar.</h2>
+  <div class="mwx-dulu"><div><span class="a">Tahan senyap jam 3 pagi sampai subuh</span><span class="b">Sebotol tepi katil, terus capai</span></div><div><span class="a">Minyak panas, melekit, cadar berbau</span><span class="b">Sejuk dulu, suam selesa, cadar tak kotor</span></div><div><span class="a">Esok pagi jalan terhincut</span><span class="b">Pagi esok dukung baby lama-lama</span></div></div>
+</section>
+
+<section class="mwx-sec" data-mwx-sec="07_cara_guna">
+  <h2>Seminggu lepas tu...</h2>
+  <p class="mwx-lead" style="margin:0 0 14px">Dah boleh dukung baby lama-lama. Wife tengok je, senyum. Tengok sendiri.</p>
+  <div class="mwx-vwrap mwx-video--compact">
+    <p class="mwx-vlabel">Video Sambungan Cerita (13 Saat)</p>
+    <div class="mwx-video" data-src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/vid-betis-sokongan-20261120.mp4" data-video-slot="2_demo" data-video-title="Video Seminggu Lepas Tu 13s">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/poster-vid-betis-sokongan-20261120.jpg" alt="Video Seminggu Lepas Tu 13s" loading="lazy">
+      <button type="button">Tonton video</button>
+    </div>
+    <p class="mwx-vcap">Seminggu lepas tu: dah boleh dukung baby lama-lama</p>
+  </div>
+  <p class="mwx-warn"><b>Untuk kegunaan luaran sahaja.</b> Elakkan mata, mulut dan luka terbuka. Ikut arahan pada label.</p>
+</section>
+
+<section class="mwx-sec mwx-bukti-sec" data-mwx-sec="03_bukti_pelanggan">
+  <h2>Kata pelanggan lain yang selalu kena betis tarik.</h2>
+  <div class="mwx-bukti"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-betis-1.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-betis-2.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-betis-3.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-betis-4.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"></div>
+  <p class="mwx-bukti-nota">Testimoni pelanggan sebenar. Leret ke tepi untuk tengok semua.</p>
+</section>
+
+<section class="mwx-sec" id="mwx-pakej" data-mwx-sec="10_pilihan_pakej">
+  <h2>Pilih pakej untuk betis yang selalu tarik.</h2>
+  <p class="mwx-kira-line">Beli 2 botol dah RM45. Ambil terus <b>Set 3 Botol RM33</b> (RM11 sebotol) &mdash; <b>jimat RM12</b> berbanding 2 botol, atau jimat RM42 berbanding beli satu-satu 3 kali (RM75).</p>
+  <div class="mwx-vwrap mwx-video--compact" style="margin:6px 0 18px">
+    <p class="mwx-vlabel">Video Pakej Watak (19 Saat)</p>
+    <div class="mwx-video" data-src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/vid-betis-pakej-20261120.mp4" data-video-slot="3_pakej" data-video-title="Video Pakej 3 Botol Untuk Betis 19s">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/poster-vid-betis-pakej-20261120.jpg" alt="Video Pakej 3 Botol Untuk Betis 19s" loading="lazy">
+      <button type="button">Tonton video</button>
+    </div>
+    <p class="mwx-vcap">Tonton 19 saat: satu tepi katil, satu dalam kereta, satu dalam beg baby</p>
+  </div>
+  <a class="mwx-card top" href="#order_form" data-pack="3">
+    <span class="mwx-flag">Paling berbaloi</span>
+    <span class="mwx-card-body">
+      <img class="mwx-card-img" src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sku-3-botol-rm33.jpg" alt="Gambar pakej 3 botol Minyak Warisan Tok Cap Burung (RM33)" width="84" height="84" loading="lazy">
+      <span class="mwx-card-txt"><span class="mwx-card-row"><b>3 botol</b><strong>RM33</strong></span>
+      <span class="mwx-card-sub">RM11 sebotol. Satu tepi katil, satu dalam kereta, satu dalam beg baby.</span>
+      <span class="mwx-card-cta">Saya Pilih 3 Botol &rarr;</span></span>
+    </span>
+  </a>
+  <a class="mwx-card" href="#order_form" data-pack="1">
+    <span class="mwx-card-body">
+      <img class="mwx-card-img" src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sku-1-botol-rm25.jpg" alt="Gambar pakej 1 botol Minyak Warisan Tok Cap Burung (RM25)" width="84" height="84" loading="lazy">
+      <span class="mwx-card-txt"><span class="mwx-card-row"><b>1 botol</b><strong>RM25</strong></span>
+      <span class="mwx-card-sub">Nak cuba satu botol dulu (RM25).</span></span>
+    </span>
+  </a>
+  <a class="mwx-card" href="#order_form" data-pack="2">
+    <span class="mwx-card-body">
+      <img class="mwx-card-img" src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sku-2-botol-rm45.jpg" alt="Gambar pakej 2 botol Minyak Warisan Tok Cap Burung (RM45)" width="84" height="84" loading="lazy">
+      <span class="mwx-card-txt"><span class="mwx-card-row"><b>2 botol</b><strong>RM45</strong></span>
+      <span class="mwx-card-sub">RM22.50 sebotol. Set 3 botol kat atas lagi jimat: RM33 je.</span></span>
+    </span>
+  </a>
+  <p class="mwx-lead" style="margin-top:16px"><b>Satu tepi katil. Satu dalam kereta. Satu dalam beg baby.</b></p>
+  <p style="margin-top:6px">Betis tarik tak tunggu masa. Bila botol ada kat setiap tempat, tak payah cari-cari tengah malam.</p>
+  <table class="mwx-pos">
+    <thead><tr><th>Kawasan penghantaran (satu set)</th><th>Caj Pos Tetap</th></tr></thead>
+    <tbody>
+      <tr><th>Semenanjung Malaysia</th><td>RM7</td></tr>
+      <tr><th>Sabah &amp; Sarawak</th><td>RM12</td></tr>
+    </tbody>
+  </table>
+  <p class="mwx-note">Contoh: 3 botol RM33 + pos Semenanjung RM7 = <b>RM40 sahaja</b> (FPX / DuitNow).</p>
+</section>
+
+<section class="mwx-sec mwx-cream" data-mwx-sec="11_jaminan_rosak">
+  <h2>Barang sampai rosak? Kami ganti.</h2>
+  <p>Setiap botol poket 25ml dibalut kemas berlapis sebelum dipos dari Kota Bharu, Kelantan. Jika bungkusan sampai tumpah atau rosak, hubungi WhatsApp <a href="https://wa.me/601171681838" target="_blank" rel="noopener" style="color:var(--accent);font-weight:800;text-decoration:underline;white-space:nowrap">+6011-7168 1838</a> dalam masa 3 hari selepas diterima untuk gantian.</p>
+</section>
+
+<section class="mwx-sec mwx-tutup" data-mwx-sec="12_pilihan_tutup">
+  <figure class="mwx-akhir-fig">
+    <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-betis-lega.jpg" alt="Lelaki ketawa mendukung bayi di ruang tamu yang cerah" width="800" height="800" loading="lazy">
+  </figure>
+  <h2>Malam ni nak tahan lagi, atau tidur lena sampai subuh?</h2>
+  <p class="mwx-lead" style="margin:0 0 16px">Esok pagi, dukung baby lama-lama tanpa terhincut.</p>
+  <div class="mwx-pilih">
+    <div><span>Pilihan 1</span><p>Tahan senyap jam 3 pagi macam biasa.</p></div>
+    <div class="on"><span>Pilihan 2</span><p>Ambil 3 botol RM33, satu terus letak tepi katil malam ni.</p></div>
+  </div>
+  <a class="mwx-btn" href="#order_form" data-pack="3">Saya Nak 3 Botol · RM33</a>
+  <p class="mwx-note">Pos Semenanjung RM7 &middot; Sabah &amp; Sarawak RM12 (FPX / DuitNow). Untuk sapuan luaran sahaja.</p>
+</section>
+
+<section class="mwx-end" data-mwx-sec="13_langkah_akhir">
+  <h2>Tinggal satu langkah je lagi.</h2>
+  <p>Pilihan paling berbaloi: 3 botol RM33 + pos Semenanjung RM7 = <b>RM40 sahaja</b> (atau Sabah &amp; Sarawak <b>RM45</b>) melalui FPX / DuitNow.</p>
+  <p class="mwx-end-seller">Dijual oleh <b>WARISAN WK ENTERPRISE (No. Daftar SSM: 202603219678 / PG0592147-M)</b>. Gerbang rasmi Bayarcash (FPX / DuitNow) &middot; Bantuan WhatsApp <a href="https://wa.me/601171681838" target="_blank" rel="noopener" style="color:#f2c23e;font-weight:700;text-decoration:underline;white-space:nowrap">+6011-7168 1838</a>.</p>
+</section>
+</div>
+<div id="mwx-faq" class="tpl-b" lang="ms-MY" data-mwx-sec="15_faq">
+<section class="mwx-sec mwx-cream">
+  <h2>Soalan sebelum tempah.</h2>
+  <details open><summary>Betul ke 3 botol RM33?</summary><p>Betul. Harga tetap: 1 botol RM25, 2 botol RM45, kombo 3 botol RM33 (RM11 sebotol). Caj pos belum termasuk.</p></details>
+  <details><summary>Macam mana nak guna untuk betis?</summary><p>Titik satu dua titik ke tapak tangan, urut dari tumit naik ke betis. Mula-mula sejuk, lepas tu suam. Ikut arahan pada label.</p></details>
+  <details><summary>Melekit atau kotorkan cadar tak?</summary><p>Tak. Minyak hijau jernih ni ringan dan cepat serap, tak melekit dan tak kotorkan cadar atau seluar tidur.</p></details>
+  <details><summary>Bau dia kuat tak? Takut ganggu baby.</summary><p>Bau pudina lembut je, tak menusuk. Simpan botol jauh dari capaian kanak-kanak.</p></details>
+  <details><summary>Berapa caj pos?</summary><p>Kadar pos tetap untuk satu set ialah <b>RM7 (Semenanjung Malaysia)</b> dan <b>RM12 (Sabah &amp; Sarawak)</b> untuk pembayaran terus melalui Online Banking (FPX / DuitNow).</p></details>
+  <details><summary>Selamat ke tempah melalui borang ni?</summary><p>Borang ini diuruskan secara rasmi oleh penjual berdaftar <b>WARISAN WK ENTERPRISE (No. Daftar SSM: 202603219678 / PG0592147-M)</b> melalui gerbang pembayaran berlesen <b>Bayarcash (FPX &amp; DuitNow)</b>. Sebarang pertanyaan atau bantuan pesanan, hubungi WhatsApp kami di <a href="https://wa.me/601171681838" target="_blank" rel="noopener" style="color:var(--accent);font-weight:800;text-decoration:underline;white-space:nowrap">+6011-7168 1838</a>.</p></details>
+  <details><summary>Macam mana nak kenal botol yang betul?</summary><p>Cari perkataan TOK pada label krim di depan botol, cecair hijau jernih dan penutup merah.</p></details>
+  <details><summary>Nak beli lebih satu set?</summary><p>Caj pos di atas untuk satu set sahaja. Pembelian lebih daripada satu set melibatkan tambahan pos.</p></details>
+</section>
+</div>
+<footer id="mwx-footer" data-mwx-sec="16_footer" lang="ms-MY" style="background:#0a2c23;color:#fff;padding:22px 18px;font:14px/1.6 Arial,sans-serif;text-align:center;border-radius:12px;margin:16px auto 0;max-width:760px"><b>Minyak Warisan Tok Cap Burung (25ml)</b><br>Dimiliki &amp; Dijual oleh: <b>WARISAN WK ENTERPRISE</b><br><b>No. Pendaftaran SSM: <span style="white-space:nowrap">202603219678</span> <span style="white-space:nowrap">(PG0592147-M)</span></b><br><span style="opacity:.9">Lot 99 Kampung Paya Keranji, Pasir Hor, 15100 Kota Bharu, Kelantan</span><br><span style="opacity:.95">WhatsApp Khidmat Pelanggan: <a href="https://wa.me/601171681838" target="_blank" rel="noopener" style="color:#f2c23e;font-weight:700;text-decoration:underline;white-space:nowrap">+6011-7168 1838</a> &middot; <span style="white-space:nowrap">E-mel:</span> warisanwkenterprisehq@gmail.com</span><br><span style="opacity:.8;font-size:13px">Untuk kegunaan sapuan luaran sahaja. Kesan keselesaan berbeza mengikut individu.</span></footer>
+<script>
+(function(){
+  var MWX_ANGLE='mwtcb-betis', MWX_TPL='b';
+  var MWX_TT_PIXEL_ID='DBUHLCBC77U89HHSH970';
+  var MWX_FB_PIXEL_ID='1621088566699529';
+  var mwxInitDone=false, mwxUserSelected=false, pendingPack=null;
+  var PRICES={'3':33,'2':45,'1':25};
+
+  if(MWX_TT_PIXEL_ID && (!window.ttq || !window.ttq._i || !window.ttq._i[MWX_TT_PIXEL_ID])){
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)));};};
+      for(var i=0;i<ttq.methods.length;i++) ttq.setAndDefer(ttq,ttq.methods[i]);
+      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++) ttq.setAndDefer(e,ttq.methods[n]);return e;};
+      ttq.load=function(e,n){
+        var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;
+        ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
+        var a=d.createElement("script");a.type="text/javascript",a.async=!0,a.src=r+"?sdkid="+e+"&lib="+t;
+        var s=d.getElementsByTagName("script")[0];
+        if(s&&s.parentNode) s.parentNode.insertBefore(a,s); else (d.head||d.body).appendChild(a);
+      };
+      ttq.load(MWX_TT_PIXEL_ID);
+      ttq.page();
+    }(window, document, 'ttq');
+  }
+
+  if(MWX_FB_PIXEL_ID && !window._mwxFbInited){
+    window._mwxFbInited=true;
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments);};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      if(s&&s.parentNode) s.parentNode.insertBefore(t,s); else (b.head||b.body).appendChild(t);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', MWX_FB_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+
+  function getEmbedIframe(){
+    return document.querySelector('iframe[src*="/embed/form/"], iframe[src*="bcl.my"]');
+  }
+  function getIframeDoc(ifr){
+    if(!ifr) return null;
+    try{ return ifr.contentDocument || (ifr.contentWindow && ifr.contentWindow.document); }
+    catch(ex){ return null; }
+  }
+
+  /* ===== MWX Pixel & Drop-off Telemetry Engine (3-Video & Checkout Funnel) ===== */
+  var qs={};
+  try{
+    var rawQ=(window.location.search||'').replace(/^[?]/,'').split('&');
+    for(var qi=0;qi<rawQ.length;qi++){
+      if(!rawQ[qi]) continue;
+      var qp=rawQ[qi].split('=');
+      qs[decodeURIComponent(qp[0])] = qp.length>1 ? decodeURIComponent(qp.slice(1).join('=').replace(/[+]/g,' ')) : '1';
+    }
+  }catch(ex){}
+  var isDebug = qs.mwx_debug === '1';
+  var state = {
+    angle: MWX_ANGLE,
+    tpl: MWX_TPL,
+    startTs: Date.now(),
+    selectedPack: '3',
+    furthestSec: '01_hero',
+    furthestSecOrder: 1,
+    maxScrollPct: 0,
+    furthestStep: '0_page_view',
+    furthestStepOrder: 0,
+    ctaClicked: false,
+    checkoutInitiated: false,
+    videoPlayed: false,
+    videosWatched: {},
+    proofSwiped: false,
+    faqsOpened: 0,
+    blockedFields: '',
+    submittedReady: false,
+    dropoffSent: false,
+    shippingChoice: '',
+    paymentMethod: 'FPX',
+    utm_source: qs.utm_source || '',
+    utm_medium: qs.utm_medium || '',
+    utm_campaign: qs.utm_campaign || '',
+    utm_content: qs.utm_content || '',
+    fbclid: qs.fbclid || '',
+    ttclid: qs.ttclid || '',
+    gclid: qs.gclid || '',
+    seenSecs: {},
+    seenScroll: {},
+    seenSteps: {},
+    events: []
+  };
+
+  function getWins(){
+    var out=[window];
+    var ifr=getEmbedIframe();
+    try{ if(ifr && ifr.contentWindow && ifr.contentWindow!==window) out.push(ifr.contentWindow); }catch(ex){}
+    return out;
+  }
+  function findSdk(key){
+    var wins=getWins();
+    for(var i=0;i<wins.length;i++){
+      try{ if(wins[i] && wins[i][key]) return wins[i][key]; }catch(ex){}
+    }
+    return null;
+  }
+  function toSnake(s){
+    return String(s||'').replace(/([a-z0-9])([A-Z])/g,'$1_$2').replace(/[^a-zA-Z0-9]+/g,'_').replace(/^_|_$/g,'').toLowerCase();
+  }
+  function watchedList(){
+    var k=Object.keys(state.videosWatched||{});
+    k.sort();
+    return k.join(',');
+  }
+  function renderDebug(){
+    if(!isDebug || !document.body) return;
+    var box=document.getElementById('mwx-debug-panel');
+    if(!box){
+      box=document.createElement('div');
+      box.id='mwx-debug-panel';
+      box.style.cssText='position:fixed;right:10px;bottom:10px;z-index:99999;width:305px;max-width:calc(100vw - 20px);max-height:42vh;overflow:auto;background:rgba(10,44,35,.95);color:#fff;border:2px solid #f2c23e;border-radius:10px;padding:10px 11px;font:12px/1.4 monospace;box-shadow:0 8px 24px rgba(0,0,0,.4);text-align:left';
+      document.body.appendChild(box);
+    }
+    var hasFb=!!findSdk('fbq'), hasTt=!!findSdk('ttq'), hasGtag=!!findSdk('gtag'), hasDl=!!findSdk('dataLayer');
+    var lines=state.events.slice(-8).reverse().map(function(ev){
+      return '<div style="border-top:1px solid rgba(255,255,255,.15);padding:3px 0"><b>'+ev.name+'</b> <span style="opacity:.75">'+ev.info+'</span></div>';
+    }).join('');
+    box.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><b style="color:#f2c23e">MWX PIXEL DEBUG ('+MWX_ANGLE+')</b><button type="button" onclick="this.parentNode.parentNode.remove()" style="background:#d3171d;color:#fff;border:0;border-radius:4px;padding:1px 6px;cursor:pointer">x</button></div>'
+      +'<div style="font-size:11px;margin-bottom:4px">SDK: fbq='+(hasFb?'ON':'wait')+' · ttq='+(hasTt?'ON':'wait')+' · gtag='+(hasGtag?'ON':'wait')+' · DL='+(hasDl?'ON':'wait')+'</div>'
+      +'<div style="font-size:11px;color:#c9ecf0;margin-bottom:4px">Sec: <b>'+state.furthestSec+'</b> ('+state.maxScrollPct+'%)<br>Form: <b>'+state.furthestStep+'</b> · Pack: <b>'+state.selectedPack+'</b>'+(watchedList()?'<br>Vids: <b>'+watchedList()+'</b>':'')+(state.blockedFields?'<br><span style="color:#ffb4b4">Blocked: '+state.blockedFields+'</span>':'')+'</div>'
+      +lines;
+  }
+  function track(stdEvent, customName, extra){
+    var qty=parseInt(state.selectedPack||'3',10)||3;
+    var p={angle:MWX_ANGLE, template:MWX_TPL, pack:state.selectedPack, content_type:'product', content_id:MWX_ANGLE, quantity:qty, currency:'MYR', value:PRICES[state.selectedPack]||33};
+    if(state.utm_source) p.utm_source=state.utm_source;
+    if(state.utm_campaign) p.utm_campaign=state.utm_campaign;
+    if(extra){ for(var k in extra){ if(Object.prototype.hasOwnProperty.call(extra,k)) p[k]=extra[k]; } }
+    var name=customName || stdEvent;
+    try{
+      var dl=findSdk('dataLayer');
+      if(!dl){ window.dataLayer=window.dataLayer||[]; dl=window.dataLayer; }
+      var dlObj={event:name};
+      for(var dk in p){ dlObj[dk]=p[dk]; }
+      dl.push(dlObj);
+    }catch(ex){}
+    try{
+      var fb=findSdk('fbq');
+      if(typeof fb==='function'){
+        if(stdEvent && stdEvent!=='Purchase' && stdEvent!=='PageView') fb('track', stdEvent, p);
+        if(customName && customName!==stdEvent) fb('trackCustom', customName, p);
+      }
+    }catch(ex){}
+    try{
+      var tt=findSdk('ttq');
+      if(tt && typeof tt.track==='function'){
+        if(stdEvent && stdEvent!=='Purchase' && stdEvent!=='PageView') tt.track(stdEvent, p);
+        if(customName && customName!==stdEvent) tt.track(customName, p);
+      }
+    }catch(ex){}
+    try{
+      var gt=findSdk('gtag');
+      if(typeof gt==='function'){
+        var gaMap={'ViewContent':'view_item','AddToCart':'add_to_cart','InitiateCheckout':'begin_checkout','AddPaymentInfo':'add_payment_info'};
+        gt('event', (stdEvent && gaMap[stdEvent]) ? gaMap[stdEvent] : toSnake(name), p);
+      }
+    }catch(ex){}
+    var summary=[];
+    if(p.sec) summary.push(p.sec);
+    if(p.video_slot) summary.push('slot:'+p.video_slot);
+    if(p.dest) summary.push('dest:'+p.dest);
+    if(p.target) summary.push(p.target);
+    if(p.step) summary.push(p.step);
+    if(p.missing_fields) summary.push('missing:'+p.missing_fields);
+    if(p.pct) summary.push(p.pct+'%');
+    if(p.question) summary.push(p.question.slice(0,22));
+    state.events.push({name:name, info:summary.join(' '), ts:Date.now()});
+    if(state.events.length>30) state.events.shift();
+    renderDebug();
+  }
+  function updateSec(secId){
+    if(!secId) return;
+    var num=parseInt(secId,10)||0;
+    if(num > state.furthestSecOrder){ state.furthestSecOrder=num; state.furthestSec=secId; }
+    if(!state.seenSecs[secId]){
+      state.seenSecs[secId]=true;
+      track(null, 'MWX_SectionView', {sec:secId});
+    }
+  }
+  function updateFormStep(order, stepName, extra){
+    if(order > state.furthestStepOrder){ state.furthestStepOrder=order; state.furthestStep=stepName; }
+    if(!state.seenSteps[stepName]){
+      state.seenSteps[stepName]=true;
+      var d={step:stepName, step_order:order};
+      if(extra){ for(var k in extra){ d[k]=extra[k]; } }
+      track(null, 'MWX_FormStep', d);
+    }
+  }
+  function fireInitiateCheckout(trigger){
+    if(state.checkoutInitiated) return;
+    state.checkoutInitiated=true;
+    track('InitiateCheckout', 'MWX_CheckoutVisible', {trigger:trigger||'view'});
+  }
+  function tagSections(){
+    var root=document.getElementById('mwx');
+    if(root){
+      var secs=root.querySelectorAll('section');
+      for(var i=0;i<secs.length;i++){
+        var s=secs[i];
+        if(s.getAttribute('data-mwx-sec')) continue;
+        var cls=s.className||'';
+        var h2=(s.querySelector('h2')&&s.querySelector('h2').textContent)||'';
+        var id='99_other';
+        if(cls.indexOf('mwx-hero')!==-1) id='01_hero';
+        else if(cls.indexOf('mwx-deal')!==-1) id='02_deal';
+        else if(cls.indexOf('mwx-bukti-sec')!==-1) id='03_bukti_pelanggan';
+        else if(cls.indexOf('mwx-story')!==-1) id='04_cerita_situasi';
+        else if(s.querySelector('.mwx-dulu')) id='05_dulu_vs_sekarang';
+        else if(cls.indexOf('mwx-dark')!==-1) id='06_dua_rasa';
+        else if(h2.indexOf('Cara guna')!==-1 || s.querySelector('.mwx-cara')) id='07_cara_guna';
+        else if(s.id==='mwx-pakej') id='10_pilihan_pakej';
+        else if(s.querySelector('.mwx-video')) id='08_video';
+        else if(s.querySelector('.mwx-duo')) id='09_tiga_lokasi';
+        else if(h2.indexOf('rosak')!==-1) id='11_jaminan_rosak';
+        else if(cls.indexOf('mwx-tutup')!==-1) id='12_pilihan_tutup';
+        else if(cls.indexOf('mwx-end')!==-1) id='13_langkah_akhir';
+        s.setAttribute('data-mwx-sec', id);
+      }
+    }
+    var ifr=getEmbedIframe();
+    if(ifr) ifr.setAttribute('data-mwx-sec', '14_borang_checkout');
+    var faq=document.getElementById('mwx-faq');
+    if(faq) faq.setAttribute('data-mwx-sec', '15_faq');
+  }
+  function setupObservers(){
+    tagSections();
+    if(!window.IntersectionObserver) return;
+    var els=document.querySelectorAll('[data-mwx-sec]');
+    for(var i=0;i<els.length;i++){
+      if(els[i].dataset.mwxObserved) continue;
+      els[i].dataset.mwxObserved='1';
+      (function(el){
+        new IntersectionObserver(function(entries){
+          for(var j=0;j<entries.length;j++){
+            if(entries[j].isIntersecting){
+              var secId=el.getAttribute('data-mwx-sec');
+              updateSec(secId);
+              if(secId==='14_borang_checkout') fireInitiateCheckout('scroll_to_form');
+            }
+          }
+        }, {threshold:0.25}).observe(el);
+      })(els[i]);
+    }
+  }
+  function bindIframeTracking(d){
+    if(!d || !d.documentElement || d.documentElement.dataset.mwxTrackBound) return;
+    d.documentElement.dataset.mwxTrackBound='1';
+    function getFieldMeta(inp){
+      var lblTxt='';
+      try{
+        if(inp.id){
+          var fl=d.querySelector('label[for="'+inp.id+'"]');
+          if(fl) lblTxt=fl.textContent||'';
+        }
+        if(!lblTxt && inp.parentElement){
+          var p=inp.parentElement;
+          for(var k=0;k<3 && p;k++){
+            var labels=p.querySelectorAll('label');
+            if(labels.length===1 && (labels[0].textContent||'').trim()){
+              lblTxt=labels[0].textContent;
+              break;
+            }
+            p=p.parentElement;
+          }
+        }
+        if(!lblTxt && inp.previousElementSibling && inp.previousElementSibling.tagName==='LABEL'){
+          lblTxt=inp.previousElementSibling.textContent||'';
+        }
+      }catch(ex){}
+      return {
+        label: lblTxt.toLowerCase(),
+        ph: (inp.getAttribute('placeholder')||'').toLowerCase(),
+        aria: (inp.getAttribute('aria-label')||'').toLowerCase(),
+        name: (inp.getAttribute('name')||'').toLowerCase()
+      };
+    }
+    function classifyInput(inp){
+      var m=getFieldMeta(inp);
+      if(m.ph.indexOf('line 2')!==-1 || m.label.indexOf('line 2')!==-1) return '';
+      var all=(m.label+' '+m.aria+' '+m.name+' '+m.ph);
+      if(m.label.indexOf('state')!==-1 || m.aria.indexOf('state')!==-1 || m.name.indexOf('state')!==-1) return 'state';
+      if(m.label.indexOf('city')!==-1 || m.aria.indexOf('city')!==-1 || m.name.indexOf('city')!==-1) return 'city';
+      if(m.ph.indexOf('5-digit')!==-1 || m.label.indexOf('postal')!==-1 || m.label.indexOf('postcode')!==-1 || m.name.indexOf('post')!==-1) return 'postcode';
+      if(all.indexOf('name')!==-1 && all.indexOf('company')===-1) return 'name';
+      if(all.indexOf('345')!==-1 || all.indexOf('mobile')!==-1 || all.indexOf('phone')!==-1 || inp.type==='tel') return 'phone';
+      if(all.indexOf('email')!==-1 || inp.type==='email') return 'email';
+      if(all.indexOf('line 1')!==-1 || all.indexOf('street')!==-1 || all.indexOf('address')!==-1) return 'address';
+      if(all.indexOf('state')!==-1) return 'state';
+      if(all.indexOf('city')!==-1) return 'city';
+      if(all.indexOf('postcode')!==-1 || all.indexOf('postal')!==-1) return 'postcode';
+      return '';
+    }
+    function inspectInput(el){
+      if(!el) return;
+      var txt=(el.closest('label')?el.closest('label').textContent:'')||'';
+      var val=(el.value||'').trim();
+      if(el.type==='radio' && el.name==='shipping_option'){
+        if(el.checked){
+          state.shippingChoice=txt.indexOf('Sabah')!==-1 ? 'sabah_sarawak_rm12' : 'semenanjung_rm7';
+          updateFormStep(7, '7_shipping_picked', {shipping_tier:state.shippingChoice});
+        }
+        return;
+      }
+      if(el.type==='radio'){
+        var parentTxt=(el.parentNode && el.parentNode.parentNode)?el.parentNode.parentNode.textContent:'';
+        if(parentTxt.indexOf('DuitNow')!==-1 || parentTxt.indexOf('FPX')!==-1){
+          state.paymentMethod=parentTxt.indexOf('DuitNow')!==-1?'DuitNow':'FPX';
+          updateFormStep(8, '8_payment_method', {payment_type:state.paymentMethod});
+        }
+        return;
+      }
+      if(!val) return;
+      var fk=classifyInput(el);
+      if(fk==='name') updateFormStep(2, '2_name_filled');
+      else if(fk==='phone') updateFormStep(3, '3_phone_filled');
+      else if(fk==='email') updateFormStep(4, '4_email_filled');
+      else if(fk==='address') updateFormStep(5, '5_address_filled');
+      else if(fk==='postcode' || fk==='state' || fk==='city') updateFormStep(6, '6_postcode_filled');
+    }
+    d.addEventListener('focusin', function(e){
+      var el=e.target; if(!el) return;
+      fireInitiateCheckout('field_focus');
+      var fk=classifyInput(el);
+      if(fk==='name') updateFormStep(2, '2_name_started');
+      else if(fk==='phone') updateFormStep(3, '3_phone_started');
+      else if(fk==='email') updateFormStep(4, '4_email_started');
+      else if(fk==='address') updateFormStep(5, '5_address_started');
+    }, true);
+    d.addEventListener('change', function(e){ inspectInput(e.target); }, true);
+    d.addEventListener('blur', function(e){ inspectInput(e.target); }, true);
+    d.addEventListener('click', function(e){
+      var t=e.target; if(!t || !t.closest) return;
+      var sub=t.closest('button[type="submit"], button');
+      if(sub && (sub.textContent||'').indexOf('Complete Payment')!==-1){
+        updateFormStep(9, '9_submit_clicked');
+        var missing=[], seenMissing={};
+        function addMissing(k){ if(k && !seenMissing[k]){ seenMissing[k]=true; missing.push(k); } }
+        var qtys=d.querySelectorAll('input.qty');
+        var totalQty=0;
+        for(var qi=0;qi<qtys.length;qi++){ totalQty+=parseInt(qtys[qi].value||'0',10); }
+        if(totalQty<=0) addMissing('product_qty');
+        var inputs=d.querySelectorAll('form input[required], form input');
+        for(var i=0;i<inputs.length;i++){
+          var inp=inputs[i];
+          if(inp.type==='hidden' || inp.classList.contains('qty') || inp.type==='radio') continue;
+          if(inp.offsetParent===null) continue;
+          var fk=classifyInput(inp);
+          if(!fk) continue;
+          var ok=inp.value.trim().length>0 && (!inp.checkValidity || inp.checkValidity());
+          if(!ok) addMissing(fk);
+        }
+        var ships=d.querySelectorAll('input[type="radio"][name="shipping_option"]');
+        var shipOk=false;
+        for(var si=0;si<ships.length;si++){ if(ships[si].checked){ shipOk=true; break; } }
+        if(ships.length && !shipOk) addMissing('shipping_area');
+        if(missing.length){
+          state.blockedFields=missing.join(',');
+          track(null, 'MWX_FormBlocked', {missing_fields:state.blockedFields, missing_count:missing.length, step:state.furthestStep});
+        } else {
+          state.submittedReady=true;
+          state.blockedFields='';
+          track('AddPaymentInfo', 'MWX_CheckoutSubmitReady', {payment_type:state.paymentMethod, shipping_tier:state.shippingChoice||'semenanjung_rm7'});
+        }
+      }
+    }, true);
+  }
+  function sendDropOff(){
+    if(state.submittedReady || state.dropoffSent) return;
+    state.dropoffSent=true;
+    var secElapsed=Math.max(1, Math.round((Date.now()-state.startTs)/1000));
+    track(null, 'MWX_DropOffPoint', {
+      furthest_sec:state.furthestSec,
+      max_scroll_pct:state.maxScrollPct,
+      furthest_step:state.furthestStep,
+      cta_clicked:state.ctaClicked,
+      checkout_initiated:state.checkoutInitiated,
+      video_played:state.videoPlayed,
+      videos_watched:watchedList(),
+      proof_swiped:state.proofSwiped,
+      faqs_opened:state.faqsOpened,
+      blocked_fields:state.blockedFields,
+      time_sec:secElapsed
+    });
+  }
+  window.MWX_Tracker={getState:function(){return state;}, track:track};
+
+  /* ===== Layout: Place FAQ + Footer cleanly below BCL Checkout Iframe ===== */
+  function placeFooter(){
+    var ifr=getEmbedIframe();
+    var faq=document.getElementById('mwx-faq');
+    var ftr=document.getElementById('mwx-footer');
+    if(ifr && ifr.parentNode){
+      if(faq && faq.previousElementSibling !== ifr){
+        ifr.parentNode.appendChild(faq);
+      }
+      if(ftr){
+        var anchor=faq || ifr;
+        if(ftr.previousElementSibling !== anchor){
+          ifr.parentNode.appendChild(ftr);
+        }
+      }
+    }
+    setupObservers();
+  }
+  function fixTruncatedNames(d){
+    var nodes=d.querySelectorAll('.product-name');
+    for(var i=0;i<nodes.length;i++){
+      var txt=nodes[i].textContent||'';
+      if(txt.indexOf('Paling Berbalo')!==-1 && txt.indexOf('Paling Berbaloi')===-1){
+        nodes[i].textContent=txt.replace('Paling Berbalo','Paling Berbaloi');
+      }
+    }
+  }
+  function ensureDefaultShipping(d){
+    var radios=d.querySelectorAll('input[type="radio"][name="shipping_option"]');
+    if(!radios.length) return;
+    var checked=false;
+    for(var i=0;i<radios.length;i++){
+      if(radios[i].checked){
+        checked=true;
+        var lt=radios[i].closest('label')?radios[i].closest('label').textContent:'';
+        state.shippingChoice=lt.indexOf('Sabah')!==-1?'sabah_sarawak_rm12':'semenanjung_rm7';
+        break;
+      }
+    }
+    if(!checked){
+      var lbl=radios[0].closest('label') || radios[0];
+      lbl.click();
+      state.shippingChoice='semenanjung_rm7';
+    }
+  }
+  function selectPackByIndex(targetIdx, d){
+    var rows=d.querySelectorAll('table tbody tr');
+    if(!rows.length || targetIdx < 0 || targetIdx >= rows.length) return;
+    enhanceIframe(d);
+    for(var i=0;i<rows.length;i++){
+      if(i===targetIdx) continue;
+      var inp=rows[i].querySelector('input.qty');
+      var fewer=rows[i].querySelector('button[aria-label^="Fewer"]');
+      var guard=0;
+      while(inp && parseInt(inp.value||'0',10)>0 && fewer && !fewer.disabled && guard<20){
+        fewer.click();
+        guard++;
+      }
+    }
+    setTimeout(function(){
+      var tr=rows[targetIdx];
+      var inp=tr && tr.querySelector('input.qty');
+      var more=tr && tr.querySelector('button[aria-label^="More"]');
+      if(inp && parseInt(inp.value||'0',10)===0 && more && !more.disabled){
+        more.click();
+      }
+      ensureDefaultShipping(d);
+      setTimeout(function(){ fixTruncatedNames(d); syncIframe(); }, 150);
+      setTimeout(function(){ fixTruncatedNames(d); syncIframe(); }, 450);
+      setTimeout(function(){ fixTruncatedNames(d); syncIframe(); }, 950);
+    }, 45);
+  }
+  function findRowIndex(rows, pack){
+    var target=String(pack||'3')+' Botol';
+    for(var i=0;i<rows.length;i++){
+      if((rows[i].textContent||'').toLowerCase().indexOf(target.toLowerCase())!==-1) return i;
+    }
+    var fallback={'3':0,'2':1,'1':2};
+    return typeof fallback[String(pack)]==='number' ? fallback[String(pack)] : 0;
+  }
+  function detectPackFromRow(tr){
+    var t=(tr && tr.textContent)||'';
+    if(t.indexOf('3 Botol')!==-1) return '3';
+    if(t.indexOf('2 Botol')!==-1) return '2';
+    if(t.indexOf('1 Botol')!==-1) return '1';
+    return '3';
+  }
+  function selectPackInIframe(pack, shouldScroll, triggerSource){
+    pendingPack=String(pack||'3');
+    state.selectedPack=pendingPack;
+    if(shouldScroll){
+      mwxUserSelected=true;
+      state.ctaClicked=true;
+      updateFormStep(1, '1_pack_selected', {trigger:triggerSource||'cta_button'});
+      track('AddToCart', 'MWX_SelectPack', {trigger:triggerSource||'cta_button', pack:state.selectedPack, value:PRICES[state.selectedPack]||33});
+      fireInitiateCheckout(triggerSource||'cta_click');
+      var tgt=document.getElementById('order_form') || getEmbedIframe() || document.querySelector('form button[type="submit"], form');
+      if(tgt){ tgt.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    var ifr=getEmbedIframe();
+    var d=getIframeDoc(ifr);
+    if(!d || !d.body) return false;
+    var rows=d.querySelectorAll('table tbody tr');
+    if(!rows.length) return false;
+    pendingPack=null;
+    selectPackByIndex(findRowIndex(rows, pack), d);
+    return true;
+  }
+  function enhanceIframe(d){
+    if(!d || !d.documentElement) return;
+    fixTruncatedNames(d);
+    bindIframeTracking(d);
+    if(!d.getElementById('mwx-iframe-ux')){
+      var st=d.createElement('style');
+      st.id='mwx-iframe-ux';
+      st.textContent='tbody tr{cursor:pointer} button[aria-label^="More"]:disabled{pointer-events:none}';
+      (d.head || d.body).appendChild(st);
+    }
+    if(!d.documentElement.dataset.mwxUxBound){
+      d.documentElement.dataset.mwxUxBound='1';
+      d.addEventListener('click', function(e){
+        var t=e.target; if(!t || !t.closest) return;
+        if(t.closest('button[aria-label^="Fewer"], input.qty')) return;
+        var moreEnabled=t.closest('button[aria-label^="More"]:not(:disabled)');
+        if(moreEnabled) return;
+        var tr=t.closest('table tbody tr');
+        if(!tr) return;
+        var rows=d.querySelectorAll('table tbody tr');
+        var idx=Array.prototype.indexOf.call(rows, tr);
+        var inp=tr.querySelector('input.qty');
+        if(idx>=0 && inp && parseInt(inp.value||'0',10)===0){
+          mwxUserSelected=true;
+          state.selectedPack=detectPackFromRow(tr);
+          updateFormStep(1, '1_pack_selected', {trigger:'iframe_table'});
+          track('AddToCart', 'MWX_SelectPack', {trigger:'iframe_table', pack:state.selectedPack, value:PRICES[state.selectedPack]||33});
+          fireInitiateCheckout('iframe_table');
+          selectPackByIndex(idx, d);
+        }
+      });
+    }
+  }
+  function initDefaultPack(){
+    var ifr=getEmbedIframe();
+    var d=getIframeDoc(ifr);
+    if(!d || !d.body) return;
+    enhanceIframe(d);
+    if(pendingPack){
+      selectPackInIframe(pendingPack, false);
+      return;
+    }
+    if(mwxInitDone || mwxUserSelected) return;
+    var rows=d.querySelectorAll('table tbody tr');
+    var radios=d.querySelectorAll('input[type="radio"][name="shipping_option"]');
+    if(rows.length>=3 && radios.length>=1){
+      mwxInitDone=true;
+      var anyChosen=false;
+      for(var i=0;i<rows.length;i++){
+        var q=rows[i].querySelector('input.qty');
+        if(q && parseInt(q.value||'0',10)>0){ anyChosen=true; break; }
+      }
+      if(!anyChosen){ selectPackInIframe('3', false); }
+      else { ensureDefaultShipping(d); }
+    }
+  }
+  function syncIframe(){
+    var ifr=getEmbedIframe();
+    if(!ifr) return;
+    try{
+      var d=getIframeDoc(ifr);
+      if(!d || !d.body) return;
+      enhanceIframe(d);
+      var formEl=d.querySelector('form');
+      var scrollY=d.defaultView ? (d.defaultView.scrollY || 0) : 0;
+      var target=formEl ? Math.ceil(formEl.getBoundingClientRect().bottom + scrollY + 64) : Math.ceil(d.body.scrollHeight + 16);
+      if(target > 300 && target < 5000 && Math.abs(ifr.clientHeight - target) > 6){
+        ifr.style.setProperty('height', target + 'px', 'important');
+        ifr.style.setProperty('min-height', target + 'px', 'important');
+      }
+      if(!ifr.dataset.mwxObs){
+        ifr.dataset.mwxObs='1';
+        ifr.addEventListener('load', function(){ setTimeout(function(){ placeFooter(); initDefaultPack(); syncIframe(); }, 150); });
+        if(window.ResizeObserver && formEl){ new ResizeObserver(syncIframe).observe(formEl); }
+      }
+    }catch(ex){}
+  }
+
+  /* Scroll Depth, Proof Swipe, FAQ Toggle, Multi-Video Pause/Progress */
+  var scrollTick=false;
+  window.addEventListener('scroll', function(){
+    if(scrollTick) return;
+    scrollTick=true;
+    setTimeout(function(){
+      scrollTick=false;
+      var doc=document.documentElement, maxH=Math.max(1, (doc.scrollHeight||0) - window.innerHeight);
+      var pct=Math.min(100, Math.round((window.scrollY / maxH) * 100));
+      if(pct > state.maxScrollPct) state.maxScrollPct=pct;
+      [25,50,75,90,100].forEach(function(m){
+        if(pct >= m && !state.seenScroll[m]){
+          state.seenScroll[m]=true;
+          track(null, 'MWX_ScrollDepth', {pct:m, sec:state.furthestSec});
+        }
+      });
+    }, 200);
+  }, {passive:true});
+
+  var buktiEl=document.querySelector('#mwx .mwx-bukti');
+  if(buktiEl){
+    buktiEl.addEventListener('scroll', function(){
+      if(!state.proofSwiped && buktiEl.scrollLeft > 30){
+        state.proofSwiped=true;
+        track(null, 'MWX_ProofSwipe', {sec:'03_bukti_pelanggan'});
+      }
+    }, {passive:true});
+  }
+
+  var faqDetails=document.querySelectorAll('#mwx-faq details');
+  for(var fi=0;fi<faqDetails.length;fi++){
+    (function(det){
+      det.addEventListener('toggle', function(){
+        if(det.open){
+          var qText=(det.querySelector('summary')?det.querySelector('summary').textContent:'').trim();
+          state.faqsOpened++;
+          track(null, 'MWX_FAQOpen', {question:qText});
+        }
+      });
+    })(faqDetails[fi]);
+  }
+
+  document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden') sendDropOff(); });
+  window.addEventListener('pagehide', sendDropOff);
+
+  function boot(){ placeFooter(); initDefaultPack(); syncIframe(); renderDebug(); }
+  boot();
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
+  window.addEventListener('load', function(){
+    boot();
+    setTimeout(function(){ track('ViewContent', 'MWX_FunnelStart', {sec:'01_hero'}); }, 300);
+  });
+  window.addEventListener('message',function(ev){
+    setTimeout(function(){ initDefaultPack(); syncIframe(); }, 80);
+    try{
+      if(typeof ev.data==='string' && ev.data.indexOf('infoDelivery')!==-1){
+        var msg=JSON.parse(ev.data);
+        if(msg && msg.info && msg.info.playerState===0){ track(null, 'MWX_VideoComplete', {sec:'08_video', video_slot:'1_angle', source:'youtube'}); }
+      }
+    }catch(ex){}
+  });
+  window.addEventListener('resize',function(){setTimeout(syncIframe, 120);});
+  [250, 600, 1100, 1800, 2800, 4000].forEach(function(ms){ setTimeout(boot, ms); });
+
+  function pauseOtherVideos(activeEl){
+    var vids=document.querySelectorAll('#mwx video');
+    for(var i=0;i<vids.length;i++){
+      if(vids[i]!==activeEl && !vids[i].paused){
+        try{ vids[i].pause(); }catch(ex){}
+      }
+    }
+  }
+
+  document.addEventListener('click',function(e){
+    var t=e.target; if(!t||!t.closest) return;
+    var bioOut=t.closest('#mwx .mwx-bio-out');
+    if(bioOut){
+      track(null, 'MWX_OutboundClick', {dest:bioOut.getAttribute('data-dest')||'external'});
+      return;
+    }
+    var bioJump=t.closest('#mwx .mwx-jump-link');
+    if(bioJump){
+      var href=bioJump.getAttribute('href')||'';
+      var jp=bioJump.getAttribute('data-jump-pack');
+      if(jp) selectPackInIframe(jp, false, bioJump.getAttribute('data-bio')||'bio_jump');
+      var tgtEl=href.charAt(0)==='#' ? document.querySelector(href) : null;
+      if(tgtEl){
+        e.preventDefault();
+        tgtEl.scrollIntoView({behavior:'smooth', block:'start'});
+        track(null, 'MWX_BioShortcut', {target:bioJump.getAttribute('data-bio')||href});
+      }
+      return;
+    }
+    var v=t.closest('#mwx .mwx-video button');
+    if(v){
+      var w=v.parentNode, src=w.getAttribute('data-src'), yt=w.getAttribute('data-yt');
+      var slot=w.getAttribute('data-video-slot') || '1_angle';
+      var vtitle=w.getAttribute('data-video-title') || yt || src || slot;
+      var secEl=w.closest('[data-mwx-sec]');
+      var secId=secEl ? secEl.getAttribute('data-mwx-sec') : '08_video';
+      state.videoPlayed=true;
+      state.videosWatched[slot]=true;
+      pauseOtherVideos(null);
+      track(null, 'MWX_VideoPlay', {sec:secId, video_slot:slot, video_title:vtitle, video_id:yt||src||slot});
+      if(src){
+        var el=document.createElement('video');
+        el.src=src; el.controls=true; el.autoplay=true; el.setAttribute('playsinline',''); el.setAttribute('preload','metadata');
+        var vSeen={};
+        el.addEventListener('play', function(){ pauseOtherVideos(el); });
+        el.addEventListener('timeupdate', function(){
+          if(!el.duration) return;
+          var vp=Math.round((el.currentTime/el.duration)*100);
+          [25,50,75].forEach(function(m){
+            if(vp>=m && !vSeen[m]){
+              vSeen[m]=true;
+              track(null,'MWX_VideoProgress_'+m,{sec:secId, video_slot:slot, video_title:vtitle, pct:m});
+            }
+          });
+        });
+        el.addEventListener('ended', function(){
+          track(null,'MWX_VideoComplete',{sec:secId, video_slot:slot, video_title:vtitle, pct:100});
+        });
+        w.innerHTML=''; w.appendChild(el);
+      } else if(yt){
+        var f=document.createElement('iframe');
+        f.src='https://www.youtube-nocookie.com/embed/'+yt+'?autoplay=1&playsinline=1&rel=0&enablejsapi=1';
+        f.allow='autoplay; encrypted-media';
+        f.setAttribute('allowfullscreen','');
+        w.innerHTML=''; w.appendChild(f);
+      }
+    }
+    var a=t.closest('#mwx [data-pack], #mwx a[href="#order_form"]');
+    if(a){
+      e.preventDefault();
+      var pack=a.getAttribute('data-pack') || '3';
+      var trig='cta_button';
+      if(a.classList.contains('mwx-headbtn')) trig='header_btn';
+      else if(a.classList.contains('mwx-card')) trig='card_pakej';
+      else if(a.closest('.mwx-hero')) trig='hero_btn';
+      else if(a.closest('.mwx-tutup')) trig='tutup_btn';
+      selectPackInIframe(pack, true, trig);
+    }
+  });
+})();
+</script>
