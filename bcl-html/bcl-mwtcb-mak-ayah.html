@@ -179,8 +179,11 @@
   font-weight: 800;
   letter-spacing: .5px;
   text-transform: uppercase;
-  color: #153D43;
+  color: var(--brand, #153D43);
   margin: 0 0 8px !important;
+}
+.tpl-c .mwx-vlabel {
+  color: #7fd6c2;
 }
 #mwx .mwx-video button {
   background: radial-gradient(circle, rgba(10,44,35,.48) 0%, rgba(10,44,35,0) 68%);
@@ -360,6 +363,7 @@
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: 50% 20%;
   display: block;
 }
 .mwx-jalur-body { padding: 12px 13px 14px; }
@@ -381,28 +385,53 @@
   line-height: 1.45;
   color: #293c34;
 }
-.mwx-usp-sapu {
-  margin: 0 auto 14px;
+#mwx .mwx-cara { margin: 12px auto 14px !important; }
+#mwx .mwx-usp-sapu {
+  margin: 0 auto 14px !important;
   max-width: 420px;
   border-radius: 14px;
   overflow: hidden;
   border: 2px solid rgba(242,194,62,.45);
 }
 #mwx .mwx-usp-sapu img { width: 100%; height: auto; display: block; }
-.mwx-akhir-fig {
-  margin: 0 auto 14px;
+#mwx .mwx-akhir-fig {
+  margin: 0 auto 14px !important;
   max-width: 460px;
   border-radius: 14px;
   overflow: hidden;
 }
 #mwx .mwx-akhir-fig img { width: 100%; height: auto; display: block; }
+.mwx-ringkasan-bar {
+  background: #f8f1dd;
+  color: #10231c;
+  border-top: 2px solid #e2d3b5;
+  border-bottom: 2px solid #0d3b2e;
+  padding: 13px 16px;
+  text-align: center;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.mwx-rk-badge {
+  display: inline-block;
+  background: #0d3b2e;
+  color: #f2c23e;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.mwx-ringkasan-bar b { color: #d3171d; font-weight: 800; }
+.mwx-ringkasan-bar small { color: #3d5248; font-weight: 600; }
 
 </style>
 <div id="mwx" class="tpl-b" lang="ms-MY">
 <header class="mwx-head">
   <p class="mwx-strip">WARISAN WK ENTERPRISE (SSM: 202603219678 / PG0592147-M) &middot; Pos SM RM7 / SS RM12</p>
   <div class="mwx-headbar">
-    <img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-logo-tok.png" alt="Logo Tok Cap Burung" width="44" height="44">
+    <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/mwx4-logo-tok.png" alt="Logo Tok Cap Burung" width="44" height="44">
     <p class="mwx-brand"><b><span>Minyak Warisan </span>Tok Cap Burung</b><small>Sejak 1958 &middot; SSM: 202603219678 (PG0592147-M)</small></p>
     <a class="mwx-headbtn" href="#order_form" data-pack="3">Pesan<span> Sekarang</span></a>
   </div>
@@ -411,6 +440,7 @@
 <section class="mwx-hero" data-mwx-sec="01_hero">
   <h1>Mak tak minta apa-apa. <em>Tapi lutut dia dengan betis ayah tahu.</em></h1>
   <div class="mwx-vwrap mwx-hero-vwrap">
+    <p class="mwx-vlabel">Video Cerita Watak (80 Saat)</p>
     <div class="mwx-video" data-src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/vid-mak-ayah-vo-20261120.mp4" data-video-slot="1_angle" data-video-title="Video Kisah Mak Ayah Di Kampung 80s">
       <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/poster-vid-mak-ayah.jpg" alt="Video Kisah Mak Ayah Di Kampung 80s" width="720" height="1280" fetchpriority="high">
       <button type="button">Tonton video</button>
@@ -428,23 +458,23 @@
   <h2>Lepas video tu, cuba ingat mak ayah korang sendiri.</h2>
   <div class="mwx-jalur-grid">
     <article class="mwx-jalur-card">
-      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-mak-ayah-jalur-1.jpg" alt="Mak dan ayah duduk diam di beranda selepas anak balik ke bandar" width="800" height="600" loading="lazy">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-mak-ayah-jalur-1.jpg" alt="Mak dan ayah duduk diam di beranda selepas anak balik ke bandar" width="800" height="600" loading="lazy" style="object-position:50% 10%">
       <div class="mwx-jalur-body">
-        <span class="mwx-jalur-tag">1 · Sebelum</span>
+        <span class="mwx-jalur-tag">1 · Lepas Anak Balik</span>
         <p>Kereta anak hilang kat hujung simpang. Mak ayah duduk kat beranda, diam je. Bahu mak lenguh, kaki ayah pun sama.</p>
       </div>
     </article>
     <article class="mwx-jalur-card">
-      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-mak-ayah-jalur-2.jpg" alt="Mak memegang sekeping nota kecil di tepi katil" width="800" height="600" loading="lazy">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-mak-ayah-jalur-2.jpg" alt="Mak memegang sekeping nota kecil di tepi katil" width="800" height="600" loading="lazy" style="object-position:50% 12%">
       <div class="mwx-jalur-body">
-        <span class="mwx-jalur-tag">2 · Bungkusan Sampai</span>
+        <span class="mwx-jalur-tag">2 · Jumpa Bawah Bantal</span>
         <p>Pagi esok mak kemas bilik anak. Bawah bantal ada sebotol minyak kecik dengan nota: jangan lupa sapu sendiri, mak.</p>
       </div>
     </article>
     <article class="mwx-jalur-card">
-      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-mak-ayah-jalur-3.jpg" alt="Mak urut betis ayah di beranda, botol tegak di atas meja kecil" width="800" height="600" loading="lazy">
+      <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/sp-mak-ayah-jalur-3.jpg" alt="Mak urut betis ayah di beranda, botol tegak di atas meja kecil" width="800" height="600" loading="lazy" style="object-position:50% 8%">
       <div class="mwx-jalur-body">
-        <span class="mwx-jalur-tag">3 · Mula Sapu</span>
+        <span class="mwx-jalur-tag">3 · Mak Urut Betis Ayah</span>
         <p>Malam-malam mak titik sikit kat betis ayah, urut perlahan. Ayah kata, macam anak sendiri yang urutkan.</p>
       </div>
     </article>
@@ -479,14 +509,14 @@
       <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/poster-vid-mak-ayah-sokongan-20261120.jpg" alt="Video Seminggu Lepas Tu 18s" loading="lazy">
       <button type="button">Tonton video</button>
     </div>
-    <p class="mwx-vcap">Seminggu lepas tu: mak ayah jalan petang sama-sama keliling kampung</p>
+    <p class="mwx-vcap">Tonton 18 saat &mdash; seminggu lepas tu: mak ayah jalan petang sama-sama keliling kampung</p>
   </div>
   <p class="mwx-warn"><b>Untuk kegunaan luaran sahaja.</b> Elakkan mata, mulut dan luka terbuka. Ikut arahan pada label.</p>
 </section>
 
 <section class="mwx-sec mwx-bukti-sec" data-mwx-sec="03_bukti_pelanggan">
   <h2>Kata anak-anak lain yang kirim untuk mak ayah di kampung.</h2>
-  <div class="mwx-bukti"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-mak-ayah-1.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-mak-ayah-2.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-mak-ayah-3.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"><img src="https://cdn.onpay.my/users/minyakwarisantokcapburung/media/uploads/mwx4-sp-mak-ayah-4.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"></div>
+  <div class="mwx-bukti"><img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/testimoni/mwx4-sp-mak-ayah-1.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"><img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/testimoni/mwx4-sp-mak-ayah-4.jpg" alt="Testimoni pelanggan Minyak Warisan Tok Cap Burung" width="800" height="1000" loading="lazy"></div>
   <p class="mwx-bukti-nota">Testimoni pelanggan sebenar. Leret ke tepi untuk tengok semua.</p>
 </section>
 
@@ -499,7 +529,7 @@
       <img src="https://farisdatosheikh.github.io/mwtcb-bcl-cdn/poster-vid-mak-ayah-pakej-20261120.jpg" alt="Video Pakej 3 Botol Untuk Mak Ayah 20s" loading="lazy">
       <button type="button">Tonton video</button>
     </div>
-    <p class="mwx-vcap">Tonton 18 saat: satu tepi katil, satu tepi sejadah mak, satu dalam beg ayah ke surau</p>
+    <p class="mwx-vcap">Tonton 20 saat: satu tepi katil, satu tepi sejadah mak, satu dalam beg ayah ke surau</p>
   </div>
   <a class="mwx-card top" href="#order_form" data-pack="3">
     <span class="mwx-flag">Paling berbaloi</span>
@@ -560,6 +590,10 @@
   <p>Pilihan paling berbaloi: 3 botol RM33 + pos Semenanjung RM7 = <b>RM40 sahaja</b> (atau Sabah &amp; Sarawak <b>RM45</b>) melalui FPX / DuitNow.</p>
   <p class="mwx-end-seller">Dijual oleh <b>WARISAN WK ENTERPRISE (No. Daftar SSM: 202603219678 / PG0592147-M)</b>. Gerbang rasmi Bayarcash (FPX / DuitNow) &middot; Bantuan WhatsApp <a href="https://wa.me/601171681838" target="_blank" rel="noopener" style="color:#f2c23e;font-weight:700;text-decoration:underline;white-space:nowrap">+6011-7168 1838</a>.</p>
 </section>
+<div id="mwx-ringkasan-harga" class="mwx-ringkasan-bar" aria-live="polite">
+  <span class="mwx-rk-badge">RINGKASAN PESANAN</span>
+  <span id="mwx-ringkasan-teks">Pakej dipilih: <b>3 Botol RM33</b> + pos RM7 (Semenanjung) = <b>RM40</b> <small>(Sabah/Sarawak RM45)</small></span>
+</div>
 </div>
 <div id="mwx-faq" class="tpl-b" lang="ms-MY" data-mwx-sec="15_faq">
 <section class="mwx-sec mwx-cream">
@@ -580,8 +614,19 @@
   var MWX_ANGLE='mwtcb-mak-ayah', MWX_TPL='b';
   var MWX_TT_PIXEL_ID='DBUHLCBC77U89HHSH970';
   var MWX_FB_PIXEL_ID='1621088566699529';
-  var mwxInitDone=false, mwxUserSelected=false, pendingPack=null;
-  var PRICES={'3':33,'2':45,'1':25};
+  var mwxInitDone=false, mwxUserSelected=false, mwxUserScrolled=false, pendingPack=null;
+  var PRICES={"3": 33, "2": 45, "1": 25};
+  var POS_SM=7, POS_SS=12;
+  function markUserScroll(){ mwxUserScrolled=true; }
+  window.addEventListener('wheel', markUserScroll, {passive:true});
+  window.addEventListener('touchmove', markUserScroll, {passive:true});
+  window.addEventListener('keydown', function(e){
+    var k=e.keyCode;
+    if(k===32||k===33||k===34||k===35||k===36||k===38||k===40) mwxUserScrolled=true;
+  }, true);
+  window.addEventListener('mousedown', function(e){
+    if(e && e.target===document.documentElement) mwxUserScrolled=true;
+  }, true);
 
   if(MWX_TT_PIXEL_ID && (!window.ttq || !window.ttq._i || !window.ttq._i[MWX_TT_PIXEL_ID])){
     !function (w, d, t) {
@@ -887,6 +932,7 @@
         if(el.checked){
           state.shippingChoice=txt.indexOf('Sabah')!==-1 ? 'sabah_sarawak_rm12' : 'semenanjung_rm7';
           updateFormStep(7, '7_shipping_picked', {shipping_tier:state.shippingChoice});
+          updatePriceSummary();
         }
         return;
       }
@@ -991,6 +1037,52 @@
     }
     setupObservers();
   }
+  function updatePriceSummary(){
+    var el=document.getElementById('mwx-ringkasan-teks');
+    if(!el) return;
+    var isSS=(state.shippingChoice==='sabah_sarawak_rm12');
+    var pos=isSS?POS_SS:POS_SM;
+    var lbl='', subtotal=0;
+    try{
+      var d=getIframeDoc(getEmbedIframe());
+      if(d && d.body){
+        var rows=d.querySelectorAll('table tbody tr');
+        var parts=[];
+        for(var i=0;i<rows.length;i++){
+          var qEl=rows[i].querySelector('input.qty');
+          var q=qEl?parseInt(qEl.value||'0',10):0;
+          if(q>0){
+            var pk=detectPackFromRow(rows[i]);
+            var u=PRICES[pk]||33;
+            subtotal+=q*u;
+            parts.push((q>1?(q+'x '):'')+pk+' Botol RM'+(q*u));
+          }
+        }
+        if(parts.length){ lbl=parts.join(' + '); }
+      }
+    }catch(ex){}
+    if(!lbl){
+      var p=String(state.selectedPack||'3');
+      var unit=PRICES[p]||PRICES['3'];
+      subtotal=unit;
+      lbl=p+' Botol RM'+unit;
+    }
+    var tot=subtotal+pos;
+    if(isSS){
+      el.innerHTML='Pakej dipilih: <b>'+lbl+'</b> + pos RM'+POS_SS+' (Sabah/Sarawak) = <b>RM'+tot+'</b>';
+    } else {
+      el.innerHTML='Pakej dipilih: <b>'+lbl+'</b> + pos RM'+POS_SM+' (Semenanjung) = <b>RM'+tot+'</b> <small>(Sabah/Sarawak RM'+(subtotal+POS_SS)+')</small>';
+    }
+  }
+  function restoreAutoScroll(d, savedScrollY){
+    if(mwxUserScrolled || mwxUserSelected || state.ctaClicked) return;
+    try{
+      if(d && d.activeElement && d.activeElement!==d.body && d.activeElement.blur) d.activeElement.blur();
+      if(document.activeElement && document.activeElement.tagName==='IFRAME' && document.activeElement.blur) document.activeElement.blur();
+    }catch(ex){}
+    var tgt=(typeof savedScrollY==='number')?savedScrollY:0;
+    if(window.scrollY!==tgt) window.scrollTo(0, tgt);
+  }
   function fixTruncatedNames(d){
     var nodes=d.querySelectorAll('.product-name');
     for(var i=0;i<nodes.length;i++){
@@ -1000,7 +1092,7 @@
       }
     }
   }
-  function ensureDefaultShipping(d){
+  function ensureDefaultShipping(d, isUserAction){
     var radios=d.querySelectorAll('input[type="radio"][name="shipping_option"]');
     if(!radios.length) return;
     var checked=false;
@@ -1013,37 +1105,52 @@
       }
     }
     if(!checked){
+      var savedY=(!isUserAction && !mwxUserScrolled && !mwxUserSelected && !state.ctaClicked)?window.scrollY:null;
       var lbl=radios[0].closest('label') || radios[0];
       lbl.click();
       state.shippingChoice='semenanjung_rm7';
+      if(!isUserAction && savedY!==null) restoreAutoScroll(d, savedY);
     }
+    updatePriceSummary();
   }
-  function selectPackByIndex(targetIdx, d){
+  function selectPackByIndex(targetIdx, d, isUserAction){
     var rows=d.querySelectorAll('table tbody tr');
     if(!rows.length || targetIdx < 0 || targetIdx >= rows.length) return;
     enhanceIframe(d);
+    var savedY=(!isUserAction && !mwxUserScrolled && !mwxUserSelected && !state.ctaClicked)?window.scrollY:null;
+    var clearedAny=false;
     for(var i=0;i<rows.length;i++){
       if(i===targetIdx) continue;
       var inp=rows[i].querySelector('input.qty');
       var fewer=rows[i].querySelector('button[aria-label^="Fewer"]');
       var guard=0;
       while(inp && parseInt(inp.value||'0',10)>0 && fewer && !fewer.disabled && guard<20){
+        clearedAny=true;
         fewer.click();
         guard++;
       }
     }
-    setTimeout(function(){
+    function applyTarget(){
       var tr=rows[targetIdx];
       var inp=tr && tr.querySelector('input.qty');
       var more=tr && tr.querySelector('button[aria-label^="More"]');
       if(inp && parseInt(inp.value||'0',10)===0 && more && !more.disabled){
         more.click();
       }
-      ensureDefaultShipping(d);
-      setTimeout(function(){ fixTruncatedNames(d); syncIframe(); }, 150);
-      setTimeout(function(){ fixTruncatedNames(d); syncIframe(); }, 450);
-      setTimeout(function(){ fixTruncatedNames(d); syncIframe(); }, 950);
-    }, 45);
+      ensureDefaultShipping(d, isUserAction);
+      updatePriceSummary();
+      if(!isUserAction && savedY!==null) restoreAutoScroll(d, savedY);
+      [20, 120, 350, 850].forEach(function(ms){
+        setTimeout(function(){
+          fixTruncatedNames(d);
+          syncIframe();
+          updatePriceSummary();
+          if(!isUserAction && savedY!==null) restoreAutoScroll(d, savedY);
+        }, ms);
+      });
+    }
+    if(clearedAny){ setTimeout(applyTarget, 45); }
+    else { applyTarget(); }
   }
   function findRowIndex(rows, pack){
     var target=String(pack||'3')+' Botol';
@@ -1063,6 +1170,7 @@
   function selectPackInIframe(pack, shouldScroll, triggerSource){
     pendingPack=String(pack||'3');
     state.selectedPack=pendingPack;
+    updatePriceSummary();
     if(shouldScroll){
       mwxUserSelected=true;
       state.ctaClicked=true;
@@ -1078,8 +1186,20 @@
     var rows=d.querySelectorAll('table tbody tr');
     if(!rows.length) return false;
     pendingPack=null;
-    selectPackByIndex(findRowIndex(rows, pack), d);
+    selectPackByIndex(findRowIndex(rows, pack), d, !!shouldScroll);
     return true;
+  }
+  function syncPackFromIframeDom(d){
+    if(!d || !d.body) return;
+    var rows=d.querySelectorAll('table tbody tr');
+    for(var i=0;i<rows.length;i++){
+      var q=rows[i].querySelector('input.qty');
+      if(q && parseInt(q.value||'0',10)>0){
+        state.selectedPack=detectPackFromRow(rows[i]);
+        break;
+      }
+    }
+    updatePriceSummary();
   }
   function enhanceIframe(d){
     if(!d || !d.documentElement) return;
@@ -1093,11 +1213,23 @@
     }
     if(!d.documentElement.dataset.mwxUxBound){
       d.documentElement.dataset.mwxUxBound='1';
+      d.addEventListener('wheel', markUserScroll, {passive:true});
+      d.addEventListener('touchmove', markUserScroll, {passive:true});
+      d.addEventListener('keydown', function(e){
+        var k=e.keyCode;
+        if(k===32||k===33||k===34||k===35||k===36||k===38||k===40) mwxUserScrolled=true;
+      }, true);
+      d.addEventListener('change', function(){
+        setTimeout(function(){ syncPackFromIframeDom(d); }, 60);
+      }, true);
       d.addEventListener('click', function(e){
         var t=e.target; if(!t || !t.closest) return;
-        if(t.closest('button[aria-label^="Fewer"], input.qty')) return;
-        var moreEnabled=t.closest('button[aria-label^="More"]:not(:disabled)');
-        if(moreEnabled) return;
+        if(t.closest('button[aria-label^="Fewer"], button[aria-label^="More"], input.qty')){
+          if(e.isTrusted){ mwxUserSelected=true; }
+          setTimeout(function(){ syncPackFromIframeDom(d); }, 80);
+          setTimeout(function(){ syncPackFromIframeDom(d); }, 250);
+          return;
+        }
         var tr=t.closest('table tbody tr');
         if(!tr) return;
         var rows=d.querySelectorAll('table tbody tr');
@@ -1106,10 +1238,11 @@
         if(idx>=0 && inp && parseInt(inp.value||'0',10)===0){
           mwxUserSelected=true;
           state.selectedPack=detectPackFromRow(tr);
+          updatePriceSummary();
           updateFormStep(1, '1_pack_selected', {trigger:'iframe_table'});
           track('AddToCart', 'MWX_SelectPack', {trigger:'iframe_table', pack:state.selectedPack, value:PRICES[state.selectedPack]||33});
           fireInitiateCheckout('iframe_table');
-          selectPackByIndex(idx, d);
+          selectPackByIndex(idx, d, true);
         }
       });
     }
@@ -1127,14 +1260,23 @@
     var rows=d.querySelectorAll('table tbody tr');
     var radios=d.querySelectorAll('input[type="radio"][name="shipping_option"]');
     if(rows.length>=3 && radios.length>=1){
-      mwxInitDone=true;
-      var anyChosen=false;
+      var anyChosen=false, activePack='';
       for(var i=0;i<rows.length;i++){
         var q=rows[i].querySelector('input.qty');
-        if(q && parseInt(q.value||'0',10)>0){ anyChosen=true; break; }
+        if(q && parseInt(q.value||'0',10)>0){
+          anyChosen=true;
+          activePack=detectPackFromRow(rows[i]);
+          break;
+        }
       }
-      if(!anyChosen){ selectPackInIframe('3', false); }
-      else { ensureDefaultShipping(d); }
+      if(anyChosen){
+        mwxInitDone=true;
+        if(activePack) state.selectedPack=activePack;
+        ensureDefaultShipping(d, false);
+        updatePriceSummary();
+      } else {
+        selectPackInIframe('3', false);
+      }
     }
   }
   function syncIframe(){
@@ -1153,7 +1295,7 @@
       }
       if(!ifr.dataset.mwxObs){
         ifr.dataset.mwxObs='1';
-        ifr.addEventListener('load', function(){ setTimeout(function(){ placeFooter(); initDefaultPack(); syncIframe(); }, 150); });
+        ifr.addEventListener('load', function(){ setTimeout(function(){ placeFooter(); initDefaultPack(); syncIframe(); restoreAutoScroll(d, 0); }, 60); });
         if(window.ResizeObserver && formEl){ new ResizeObserver(syncIframe).observe(formEl); }
       }
     }catch(ex){}
@@ -1162,6 +1304,10 @@
   /* Scroll Depth, Proof Swipe, FAQ Toggle, Multi-Video Pause/Progress */
   var scrollTick=false;
   window.addEventListener('scroll', function(){
+    if(!mwxUserScrolled && !mwxUserSelected && !state.ctaClicked && window.scrollY>0 && (Date.now()-state.startTs)<12000){
+      window.scrollTo(0, 0);
+      return;
+    }
     if(scrollTick) return;
     scrollTick=true;
     setTimeout(function(){
@@ -1204,7 +1350,7 @@
   document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden') sendDropOff(); });
   window.addEventListener('pagehide', sendDropOff);
 
-  function boot(){ placeFooter(); initDefaultPack(); syncIframe(); renderDebug(); }
+  function boot(){ placeFooter(); initDefaultPack(); syncIframe(); updatePriceSummary(); restoreAutoScroll(null, 0); renderDebug(); }
   boot();
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
   window.addEventListener('load', function(){
@@ -1212,7 +1358,7 @@
     setTimeout(function(){ track('ViewContent', 'MWX_FunnelStart', {sec:'01_hero'}); }, 300);
   });
   window.addEventListener('message',function(ev){
-    setTimeout(function(){ initDefaultPack(); syncIframe(); }, 80);
+    setTimeout(function(){ initDefaultPack(); syncIframe(); restoreAutoScroll(null, 0); }, 40);
     try{
       if(typeof ev.data==='string' && ev.data.indexOf('infoDelivery')!==-1){
         var msg=JSON.parse(ev.data);
@@ -1221,7 +1367,7 @@
     }catch(ex){}
   });
   window.addEventListener('resize',function(){setTimeout(syncIframe, 120);});
-  [250, 600, 1100, 1800, 2800, 4000].forEach(function(ms){ setTimeout(boot, ms); });
+  [20, 100, 250, 500, 900, 1500, 2500, 4000, 6000].forEach(function(ms){ setTimeout(boot, ms); });
 
   function pauseOtherVideos(activeEl){
     var vids=document.querySelectorAll('#mwx video');
@@ -1243,6 +1389,7 @@
     if(bioJump){
       var href=bioJump.getAttribute('href')||'';
       var jp=bioJump.getAttribute('data-jump-pack');
+      mwxUserScrolled=true;
       if(jp) selectPackInIframe(jp, false, bioJump.getAttribute('data-bio')||'bio_jump');
       var tgtEl=href.charAt(0)==='#' ? document.querySelector(href) : null;
       if(tgtEl){
