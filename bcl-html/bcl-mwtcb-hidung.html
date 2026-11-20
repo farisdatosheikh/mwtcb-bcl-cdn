@@ -614,18 +614,19 @@
   var MWX_ANGLE='mwtcb-hidung', MWX_TPL='c';
   var MWX_TT_PIXEL_ID='DBUHLCBC77U89HHSH970';
   var MWX_FB_PIXEL_ID='1621088566699529';
-  var mwxInitDone=false, mwxUserSelected=false, mwxUserScrolled=false, pendingPack=null;
+  var mwxInitDone=false, mwxUserSelected=false, mwxUserScrolled=false, lastUserScrollY=0, pendingPack=null;
   var PRICES={"3": 33, "2": 45, "1": 25};
   var POS_SM=7, POS_SS=12;
-  function markUserScroll(){ mwxUserScrolled=true; }
+  try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(ex){}
+  function markUserScroll(){ mwxUserScrolled=true; lastUserScrollY=window.scrollY||0; }
   window.addEventListener('wheel', markUserScroll, {passive:true});
   window.addEventListener('touchmove', markUserScroll, {passive:true});
   window.addEventListener('keydown', function(e){
     var k=e.keyCode;
-    if(k===32||k===33||k===34||k===35||k===36||k===38||k===40) mwxUserScrolled=true;
+    if(k===32||k===33||k===34||k===35||k===36||k===38||k===40) markUserScroll();
   }, true);
   window.addEventListener('mousedown', function(e){
-    if(e && e.target===document.documentElement) mwxUserScrolled=true;
+    if(e && e.target===document.documentElement) markUserScroll();
   }, true);
 
   if(MWX_TT_PIXEL_ID && (!window.ttq || !window.ttq._i || !window.ttq._i[MWX_TT_PIXEL_ID])){
@@ -954,6 +955,12 @@
     }
     d.addEventListener('focusin', function(e){
       var el=e.target; if(!el) return;
+      if(!mwxUserScrolled && !mwxUserSelected && !state.ctaClicked && (Date.now()-state.startTs)<6000){
+        try{ if(el.blur) el.blur(); }catch(ex){}
+        restoreAutoScroll(d);
+        setTimeout(function(){ restoreAutoScroll(d); }, 20);
+        return;
+      }
       fireInitiateCheckout('field_focus');
       var fk=classifyInput(el);
       if(fk==='name') updateFormStep(2, '2_name_started');
@@ -1074,14 +1081,17 @@
       el.innerHTML='Pakej dipilih: <b>'+lbl+'</b> + pos RM'+POS_SM+' (Semenanjung) = <b>RM'+tot+'</b> <small>(Sabah/Sarawak RM'+(subtotal+POS_SS)+')</small>';
     }
   }
-  function restoreAutoScroll(d, savedScrollY){
+  function restoreAutoScroll(d){
     if(mwxUserScrolled || mwxUserSelected || state.ctaClicked) return;
     try{
+      if(d && d.querySelectorAll){
+        var af=d.querySelectorAll('[autofocus]');
+        for(var i=0;i<af.length;i++) af[i].removeAttribute('autofocus');
+      }
       if(d && d.activeElement && d.activeElement!==d.body && d.activeElement.blur) d.activeElement.blur();
       if(document.activeElement && document.activeElement.tagName==='IFRAME' && document.activeElement.blur) document.activeElement.blur();
     }catch(ex){}
-    var tgt=(typeof savedScrollY==='number')?savedScrollY:0;
-    if(window.scrollY!==tgt) window.scrollTo(0, tgt);
+    if(window.scrollY!==lastUserScrollY) window.scrollTo(0, lastUserScrollY);
   }
   function fixTruncatedNames(d){
     var nodes=d.querySelectorAll('.product-name');
@@ -1105,11 +1115,10 @@
       }
     }
     if(!checked){
-      var savedY=(!isUserAction && !mwxUserScrolled && !mwxUserSelected && !state.ctaClicked)?window.scrollY:null;
       var lbl=radios[0].closest('label') || radios[0];
       lbl.click();
       state.shippingChoice='semenanjung_rm7';
-      if(!isUserAction && savedY!==null) restoreAutoScroll(d, savedY);
+      if(!isUserAction) restoreAutoScroll(d);
     }
     updatePriceSummary();
   }
@@ -1117,7 +1126,6 @@
     var rows=d.querySelectorAll('table tbody tr');
     if(!rows.length || targetIdx < 0 || targetIdx >= rows.length) return;
     enhanceIframe(d);
-    var savedY=(!isUserAction && !mwxUserScrolled && !mwxUserSelected && !state.ctaClicked)?window.scrollY:null;
     var clearedAny=false;
     for(var i=0;i<rows.length;i++){
       if(i===targetIdx) continue;
@@ -1139,13 +1147,13 @@
       }
       ensureDefaultShipping(d, isUserAction);
       updatePriceSummary();
-      if(!isUserAction && savedY!==null) restoreAutoScroll(d, savedY);
+      if(!isUserAction) restoreAutoScroll(d);
       [20, 120, 350, 850].forEach(function(ms){
         setTimeout(function(){
           fixTruncatedNames(d);
           syncIframe();
           updatePriceSummary();
-          if(!isUserAction && savedY!==null) restoreAutoScroll(d, savedY);
+          if(!isUserAction) restoreAutoScroll(d);
         }, ms);
       });
     }
@@ -1217,7 +1225,7 @@
       d.addEventListener('touchmove', markUserScroll, {passive:true});
       d.addEventListener('keydown', function(e){
         var k=e.keyCode;
-        if(k===32||k===33||k===34||k===35||k===36||k===38||k===40) mwxUserScrolled=true;
+        if(k===32||k===33||k===34||k===35||k===36||k===38||k===40) markUserScroll();
       }, true);
       d.addEventListener('change', function(){
         setTimeout(function(){ syncPackFromIframeDom(d); }, 60);
@@ -1295,7 +1303,7 @@
       }
       if(!ifr.dataset.mwxObs){
         ifr.dataset.mwxObs='1';
-        ifr.addEventListener('load', function(){ setTimeout(function(){ placeFooter(); initDefaultPack(); syncIframe(); restoreAutoScroll(d, 0); }, 60); });
+        ifr.addEventListener('load', function(){ setTimeout(function(){ placeFooter(); initDefaultPack(); syncIframe(); restoreAutoScroll(d); }, 60); });
         if(window.ResizeObserver && formEl){ new ResizeObserver(syncIframe).observe(formEl); }
       }
     }catch(ex){}
@@ -1304,8 +1312,8 @@
   /* Scroll Depth, Proof Swipe, FAQ Toggle, Multi-Video Pause/Progress */
   var scrollTick=false;
   window.addEventListener('scroll', function(){
-    if(!mwxUserScrolled && !mwxUserSelected && !state.ctaClicked && window.scrollY>0 && (Date.now()-state.startTs)<12000){
-      window.scrollTo(0, 0);
+    if(!mwxUserScrolled && !mwxUserSelected && !state.ctaClicked && window.scrollY!==lastUserScrollY && (Date.now()-state.startTs)<12000){
+      window.scrollTo(0, lastUserScrollY);
       return;
     }
     if(scrollTick) return;
@@ -1350,7 +1358,7 @@
   document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden') sendDropOff(); });
   window.addEventListener('pagehide', sendDropOff);
 
-  function boot(){ placeFooter(); initDefaultPack(); syncIframe(); updatePriceSummary(); restoreAutoScroll(null, 0); renderDebug(); }
+  function boot(){ restoreAutoScroll(null); placeFooter(); initDefaultPack(); syncIframe(); updatePriceSummary(); restoreAutoScroll(null); renderDebug(); }
   boot();
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}
   window.addEventListener('load', function(){
@@ -1358,7 +1366,7 @@
     setTimeout(function(){ track('ViewContent', 'MWX_FunnelStart', {sec:'01_hero'}); }, 300);
   });
   window.addEventListener('message',function(ev){
-    setTimeout(function(){ initDefaultPack(); syncIframe(); restoreAutoScroll(null, 0); }, 40);
+    setTimeout(function(){ initDefaultPack(); syncIframe(); restoreAutoScroll(null); }, 40);
     try{
       if(typeof ev.data==='string' && ev.data.indexOf('infoDelivery')!==-1){
         var msg=JSON.parse(ev.data);
@@ -1367,7 +1375,7 @@
     }catch(ex){}
   });
   window.addEventListener('resize',function(){setTimeout(syncIframe, 120);});
-  [20, 100, 250, 500, 900, 1500, 2500, 4000, 6000].forEach(function(ms){ setTimeout(boot, ms); });
+  [10, 50, 120, 250, 500, 800, 1200, 1800, 2500, 3500, 5000, 7000].forEach(function(ms){ setTimeout(boot, ms); });
 
   function pauseOtherVideos(activeEl){
     var vids=document.querySelectorAll('#mwx video');
