@@ -425,6 +425,41 @@
 }
 .mwx-ringkasan-bar b { color: #d3171d; font-weight: 800; }
 .mwx-ringkasan-bar small { color: #3d5248; font-weight: 600; }
+#mwx .mwx-wa-wrap { max-width: 760px; margin: 0 auto; padding: 14px 16px 8px; }
+#mwx .mwx-wa-badge {
+  display: inline-block; background: #0a2c23; color: #f2c23e; font-size: 11px;
+  font-weight: 800; letter-spacing: .6px; padding: 3px 10px; border-radius: 99px;
+}
+#mwx .mwx-wa-intro { text-align: center; padding: 10px 6px 12px; }
+#mwx .mwx-wa-intro h1 {
+  font-size: 24px; line-height: 1.25; margin: 8px 0 6px; color: #0a2c23; font-weight: 800;
+}
+#mwx .mwx-wa-intro p { font-size: 14px; color: #384a42; margin: 0; line-height: 1.45; }
+#mwx .mwx-wa-packs { display: flex; flex-direction: column; gap: 9px; margin: 8px 0 10px; }
+#mwx .mwx-wa-pack {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  background: #fff; border: 2px solid #dcd3be; border-radius: 12px; padding: 10px 13px;
+  cursor: pointer; font-family: inherit; transition: border-color .15s, background .15s;
+}
+#mwx .mwx-wa-pack img {
+  width: 54px; height: 54px; border-radius: 8px; object-fit: cover; flex-shrink: 0;
+}
+#mwx .mwx-wa-pack-mid { flex: 1; min-width: 0; }
+#mwx .mwx-wa-pack-mid b { display: block; font-size: 15.5px; color: #0a2c23; }
+#mwx .mwx-wa-pack-mid small { display: block; font-size: 12.5px; color: #54665e; margin-top: 2px; }
+#mwx .mwx-wa-pack-right { text-align: right; flex-shrink: 0; }
+#mwx .mwx-wa-pack-right strong { display: block; font-size: 18px; color: #d3171d; font-weight: 800; }
+#mwx .mwx-wa-sel {
+  display: none; margin-top: 3px; background: #0a2c23; color: #f2c23e;
+  font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 99px;
+}
+#mwx .mwx-wa-pack.is-active {
+  border-color: #0a2c23; background: #eef6f2; box-shadow: 0 0 0 1px #0a2c23 inset;
+}
+#mwx .mwx-wa-pack.is-active .mwx-wa-sel { display: inline-block; }
+#mwx .mwx-wa-posnota {
+  text-align: center; font-size: 12.5px; color: #475951; margin: 2px 0 10px;
+}
 
 </style>
 <div id="mwx" class="tpl-a" lang="ms-MY">
@@ -755,11 +790,12 @@
     }
   }catch(ex){}
   var isDebug = qs.mwx_debug === '1';
+  var defaultPack = (qs.pack==='1'||qs.pack==='2'||qs.pack==='3') ? qs.pack : '3';
   var state = {
     angle: MWX_ANGLE,
     tpl: MWX_TPL,
     startTs: Date.now(),
-    selectedPack: '3',
+    selectedPack: defaultPack,
     furthestSec: '01_hero',
     furthestSecOrder: 1,
     maxScrollPct: 0,
@@ -1153,6 +1189,12 @@
     } else {
       el.innerHTML='Pakej dipilih: <b>'+lbl+'</b> + pos RM'+POS_SM+' (Semenanjung) = <b>RM'+tot+'</b> <small>(Sabah/Sarawak RM'+(subtotal+POS_SS)+')</small>';
     }
+    var waCards=document.querySelectorAll('#mwx .mwx-wa-pack[data-pack]');
+    var actPack=String(state.selectedPack||defaultPack||'3');
+    for(var wi=0;wi<waCards.length;wi++){
+      if(waCards[wi].getAttribute('data-pack')===actPack){ waCards[wi].classList.add('is-active'); }
+      else { waCards[wi].classList.remove('is-active'); }
+    }
   }
   function restoreAutoScroll(d){
     if(mwxUserScrolled || mwxUserSelected || state.ctaClicked) return;
@@ -1356,7 +1398,7 @@
         ensureDefaultShipping(d, false);
         updatePriceSummary();
       } else {
-        selectPackInIframe('3', false);
+        selectPackInIframe(defaultPack, false);
       }
     }
   }
